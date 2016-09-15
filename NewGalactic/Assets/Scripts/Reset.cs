@@ -16,6 +16,7 @@ public class Reset : MonoBehaviour {
 	}
 
 	public void ResetPlayer(){
+		player.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 		player.transform.position = resetPos;
 	}
 }
