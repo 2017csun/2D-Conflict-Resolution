@@ -685,17 +685,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1331522051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1331522050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d07edf384274394dbd8cc9898b8fa38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1331522052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,7 +884,7 @@ RectTransform:
   - {fileID: 541714973}
   - {fileID: 841724792}
   m_Father: {fileID: 368162593}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
