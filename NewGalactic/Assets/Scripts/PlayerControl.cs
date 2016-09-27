@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Networking;
 
-public class PlayerControl : NetworkBehaviour
+public class PlayerControl : MonoBehaviour
 {
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
@@ -34,14 +33,8 @@ public class PlayerControl : NetworkBehaviour
 
 	void Update()
 	{
-        //Check required for networking
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-
-        // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if (Input.GetButtonDown ("Jump") && grounded) {
