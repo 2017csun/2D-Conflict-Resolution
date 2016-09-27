@@ -16,7 +16,9 @@ public class FollowPlayer : MonoBehaviour
 
 	void Update ()
 	{
-		// Set the position to the player's position with the offset.
-		transform.position = new Vector3(player.position.x + offset.x, transform.position.y, transform.position.z);
+		if (!(player.gameObject.GetComponent<PlayerControl> ().dontScroll)) {
+			// Set the position to the player's position with the offset.
+			transform.position = new Vector3 (player.position.x + offset.x, transform.position.y, transform.position.z);
+		}
 	}
 }

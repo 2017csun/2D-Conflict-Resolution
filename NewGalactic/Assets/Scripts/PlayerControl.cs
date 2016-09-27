@@ -12,16 +12,14 @@ public class PlayerControl : MonoBehaviour
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
-	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
-	public AudioClip[] taunts;				// Array of clips for when the player taunts.
-	public float tauntProbability = 50f;	// Chance of a taunt happening.
-	public float tauntDelay = 1f;			// Delay for when the taunt should happen.
+	public float jumpForce = 1000f;			// Amount of force added when the player jumps.		// Delay for when the taunt should happen.
 
 
-	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	public Animator anim;					// Reference to the player's animator component.
+
+	public bool dontScroll = false;
 
 
 	void Awake()
@@ -37,11 +35,11 @@ public class PlayerControl : MonoBehaviour
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if (Input.GetButtonDown ("Jump") && grounded) {
+		if (Input.GetKeyDown(KeyCode.Space) && grounded) {
 			jump = true;
 			doublejump = false;
 		} 
-		if (Input.GetButtonDown ("Jump") && !jump && !doublejump) {
+		if (Input.GetKeyDown(KeyCode.Space) && !jump && !doublejump) {
 			jump = true;
 			doublejump = true;
 		}
@@ -120,5 +118,17 @@ public class PlayerControl : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.CompareTag ("NoScrollZone")) {
+			dontScroll = true;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other){
+		if (other.gameObject.CompareTag ("NoScrollZone")) {
+			dontScroll = false;
+		}
 	}
 }
