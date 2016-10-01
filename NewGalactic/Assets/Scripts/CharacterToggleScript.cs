@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -26,10 +25,11 @@ public class CharacterToggleScript : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            Debug.Log("Right arrow pressed");
             sr = gameObject.GetComponent<SpriteRenderer>();
-            Debug.Log(sr.sprite.texture);
-            sr.sprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/Character/Asteroid.png", typeof(Sprite));
+            Debug.Log(Resources.Load("AsteroidSprite"));
+            //change this later w/ more characters
+            var next = Resources.Load("AsteroidSprite") as GameObject;
+            sr.sprite = next.GetComponent<SpriteRenderer>().sprite;
         }
 	}
 

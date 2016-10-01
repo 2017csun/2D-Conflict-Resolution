@@ -184,7 +184,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 390375811}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e818e79fc607a264a8db857e5b25c21b, type: 3}
   m_Name: 
@@ -194,6 +194,39 @@ Transform:
   m_PrefabParentObject: {fileID: 4000010911209170, guid: e8aacfd1d7adc6b42a5b746b27d67345,
     type: 2}
   m_PrefabInternal: {fileID: 723600421}
+--- !u!1 &638488894 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012794613080, guid: e8aacfd1d7adc6b42a5b746b27d67345,
+    type: 2}
+  m_PrefabInternal: {fileID: 723600421}
+--- !u!114 &638488895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 638488894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e818e79fc607a264a8db857e5b25c21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &638488897
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 638488894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3034b527eb6cb934fbcadce5e78fe903, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &723600421
 Prefab:
   m_ObjectHideFlags: 0
@@ -235,7 +268,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012794613080, guid: e8aacfd1d7adc6b42a5b746b27d67345, type: 2}
       propertyPath: m_Name
-      value: Alien Robot
+      value: CharacterPlaceholder
       objectReference: {fileID: 0}
     - target: {fileID: 1000012794613080, guid: e8aacfd1d7adc6b42a5b746b27d67345, type: 2}
       propertyPath: m_Layer
