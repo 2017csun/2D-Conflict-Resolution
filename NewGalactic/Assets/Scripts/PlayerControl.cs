@@ -35,11 +35,11 @@ public class PlayerControl : MonoBehaviour
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if (Input.GetKeyDown(KeyCode.Space) && grounded) {
+		if (Input.GetButtonDown("Jump") && grounded) {
 			jump = true;
 			doublejump = false;
 		} 
-		if (Input.GetKeyDown(KeyCode.Space) && !jump && !doublejump) {
+		if (Input.GetButtonDown("Jump") && !jump && !doublejump) {
 			jump = true;
 			doublejump = true;
 		}

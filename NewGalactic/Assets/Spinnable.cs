@@ -13,7 +13,7 @@ public class Spinnable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (canSpin && Input.GetKey (KeyCode.UpArrow)) {
+		if (canSpin && Input.GetKey (KeyCode.DownArrow)) {
 			StartSpin ();
 			canSpin = false;
 		}
