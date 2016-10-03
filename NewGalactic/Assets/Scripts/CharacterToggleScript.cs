@@ -5,7 +5,9 @@ using System.Collections;
 public class CharacterToggleScript : MonoBehaviour {
 
     SpriteRenderer sr;
-    // vector to keep track of selected character/character options
+    int index = 0;
+    //array that corresponds to prefabs of the diff characters
+    string[] characters = { "AlienRobot" , "Asteroid" };
 
 	// Use this for initialization
 	void Start () {
@@ -14,25 +16,30 @@ public class CharacterToggleScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("enter pressed");
+            PlayerPrefs.SetString("character", characters[index]);
             SceneManager.LoadScene("Level");
         }
-	    else if (Input.GetKey(KeyCode.LeftArrow))
+	    else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("left arrow pressed");
+            index = Mathf.Abs((index - 1) % characters.Length);
+            updateSprite();
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            sr = gameObject.GetComponent<SpriteRenderer>();
-            Debug.Log(Resources.Load("AsteroidSprite"));
-            //change this later w/ more characters
-            var next = Resources.Load("AsteroidSprite") as GameObject;
-            sr.sprite = next.GetComponent<SpriteRenderer>().sprite;
+            index = Mathf.Abs((index + 1) % characters.Length);
+            updateSprite();
         }
-	}
 
+
+    }
+    private void updateSprite()
+    {
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        var next = Resources.Load(characters[index]) as GameObject;
+        sr.sprite = next.GetComponent<SpriteRenderer>().sprite;
+    }
     public void OnToggle()
     {
         Debug.Log("Character toggled.");
