@@ -7,28 +7,29 @@ public class CharacterToggleScript : MonoBehaviour {
     SpriteRenderer sr;
     int index = 0;
     //array that corresponds to prefabs of the diff characters
-    string[] characters = { "AlienRobot" , "Asteroid" };
+    Color[] colors = { Color.cyan, Color.green, Color.red, Color.white, Color.clear};
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            PlayerPrefs.SetString("character", characters[index]);
+            PlayerPrefs.SetFloat("red", colors[index].r);
+            PlayerPrefs.SetFloat("green", colors[index].g);
+            PlayerPrefs.SetFloat("blue", colors[index].b);
             SceneManager.LoadScene("Level");
         }
 	    else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            index = Mathf.Abs((index - 1) % characters.Length);
+            index = Mathf.Abs((index + 1) % colors.Length);
             updateSprite();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            index = Mathf.Abs((index + 1) % characters.Length);
+            index = Mathf.Abs((index + 1) % colors.Length);
             updateSprite();
         }
 
@@ -37,8 +38,9 @@ public class CharacterToggleScript : MonoBehaviour {
     private void updateSprite()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        var next = Resources.Load(characters[index]) as GameObject;
-        sr.sprite = next.GetComponent<SpriteRenderer>().sprite;
+        var color = colors[index];
+        color.a = 0.5f;
+        sr.color = color;
     }
     public void OnToggle()
     {
