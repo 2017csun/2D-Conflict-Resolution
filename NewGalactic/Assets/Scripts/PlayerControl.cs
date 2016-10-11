@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
+using ExitGames.Demos.DemoAnimator;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : Photon.PunBehaviour
 {
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
@@ -21,15 +23,42 @@ public class PlayerControl : MonoBehaviour
 
 	public bool dontScroll = false;
 
+    [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
+    public static GameObject LocalPlayerInstance;
 
-	void Awake()
+    void Awake()
 	{
-		// Setting up references.
-		groundCheck = transform.Find("groundCheck");
+        if (photonView.isMine)
+        {
+            PlayerManager.LocalPlayerInstance = this.gameObject;
+        }
+        // #Critical
+        // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
+        DontDestroyOnLoad(this.gameObject);
+
+        // Setting up references.
+        groundCheck = transform.Find("groundCheck");
 	}
 
+    void Start()
+    {
+        CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
-	void Update()
+
+        if (_cameraWork != null)
+        {
+            if (photonView.isMine)
+            {
+                _cameraWork.OnStartFollowing();
+            }
+        }
+        else
+        {
+            Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
+        }
+    }
+
+    void Update()
 	{
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
