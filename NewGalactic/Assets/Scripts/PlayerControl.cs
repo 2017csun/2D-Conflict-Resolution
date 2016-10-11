@@ -16,7 +16,6 @@ public class PlayerControl : Photon.PunBehaviour
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.		// Delay for when the taunt should happen.
 
-
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	public Animator anim;					// Reference to the player's animator component.
@@ -32,6 +31,7 @@ public class PlayerControl : Photon.PunBehaviour
         {
             PlayerManager.LocalPlayerInstance = this.gameObject;
         }
+
         // #Critical
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
         DontDestroyOnLoad(this.gameObject);
@@ -44,7 +44,6 @@ public class PlayerControl : Photon.PunBehaviour
     {
         CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
-
         if (_cameraWork != null)
         {
             if (photonView.isMine)
@@ -54,7 +53,7 @@ public class PlayerControl : Photon.PunBehaviour
         }
         else
         {
-            Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
+            Debug.LogError("<Color=Red>Missing</Color> CameraWork Component on playerPrefab.", this);
         }
     }
 
@@ -73,8 +72,6 @@ public class PlayerControl : Photon.PunBehaviour
 			doublejump = true;
 		}
 	}
-
-
 	void FixedUpdate ()
 	{
 		// Cache the horizontal input.

@@ -339,8 +339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PositionModel:
     SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
+    TeleportEnabled: 0
+    TeleportIfDistanceGreaterThan: 100000
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 10
@@ -383,7 +383,7 @@ MonoBehaviour:
     InterpolateRotateTowardsSpeed: 180
     InterpolateLerpSpeed: 5
   m_ScaleModel:
-    SynchronizeEnabled: 0
+    SynchronizeEnabled: 1
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   height: 3
   heightSmoothLag: 0.3
   centerOffset: {x: 0, y: 2.5, z: 0}
-  followOnStart: 1
+  followOnStart: 0
 --- !u!114 &114000014076591506
 MonoBehaviour:
   m_ObjectHideFlags: 1

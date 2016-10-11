@@ -12,21 +12,20 @@ public class GameManager : Photon.PunBehaviour
     {
         if (playerPrefab == null)
         {
-            Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+            Debug.LogError("<Color=Red>Missing</a> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
         }
         else
         {
-            Debug.Log("We are Instantiating LocalPlayer from " + Application.loadedLevelName);
             // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
             if (PlayerControl.LocalPlayerInstance == null)
             {
-                Debug.Log("We are Instantiating LocalPlayer from " + Application.loadedLevelName);
+                Debug.Log("We are Instantiating LocalPlayer from " + SceneManager.GetActiveScene().name);
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
+                PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
             }
             else
             {
-                Debug.Log("Ignoring scene load for " + Application.loadedLevelName);
+                Debug.Log("Ignoring scene load for " + SceneManager.GetActiveScene().name);
             }
         }
     }
@@ -61,8 +60,11 @@ public class GameManager : Photon.PunBehaviour
         {
             Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
         }
-        //Debug.Log("PhotonNetwork : Loading Level : " + PhotonNetwork.room.playerCount);
-        PhotonNetwork.LoadLevel("Level");
+        else
+        {
+            Debug.Log("PhotonNetwork : Loading Level");
+            PhotonNetwork.LoadLevel("Level");
+        }
     }
 
     /// <summary>
@@ -76,13 +78,9 @@ public class GameManager : Photon.PunBehaviour
 
 
     #region Public Methods
-
-
     public void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom();
     }
-
-
     #endregion
 }
