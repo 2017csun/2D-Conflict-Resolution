@@ -24,6 +24,7 @@ public class DoorTransporter : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D other){
+
 		canTransport = false;
 	}
 }
