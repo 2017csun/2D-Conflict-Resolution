@@ -71,8 +71,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013808674364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.46, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 1.2}
+  m_LocalPosition: {x: -6.15, y: 0.6300874, z: 0}
+  m_LocalScale: {x: 2.1, y: 2.1, z: 1.2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013574891756}
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 1000013624302924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 0.4}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010259099248}
@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010099507650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.72, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -133,7 +133,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.2}
+  m_Offset: {x: 0, y: -0.01}
   serializedVersion: 2
   m_Radius: 0.37
 --- !u!61 &61000013078263570
@@ -147,7 +147,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.08884571}
+  m_Offset: {x: 0, y: 0.29}
   serializedVersion: 2
   m_Size: {x: 0.60999995, y: 0.9923085}
 --- !u!82 &82000012582602894
@@ -271,25 +271,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingRight: 1
   jump: 0
-  moveForce: 250
-  maxSpeed: 6
+  moveForce: 100
+  maxSpeed: 3
   jumpClips:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   jumpForce: 600
-  taunts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  tauntProbability: 50
-  tauntDelay: 1
   anim: {fileID: 95000010723043156}
+  dontScroll: 0
 --- !u!212 &212000012815943212
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -318,8 +308,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1783731295
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4da7cac0b7626413eb3ac3e7a84c887c, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 33052be8874a4884faecdc56b2778fb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
