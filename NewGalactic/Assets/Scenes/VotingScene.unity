@@ -635,11 +635,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21217902, guid: 55506ac0d8d043a45abd72b9951e24f6, type: 2}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.6413793
       objectReference: {fileID: 0}
     - target: {fileID: 21217902, guid: 55506ac0d8d043a45abd72b9951e24f6, type: 2}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114000013121055408, guid: 55506ac0d8d043a45abd72b9951e24f6,
         type: 2}
@@ -841,47 +841,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4000010259099248, guid: 97a1306f9b483403990cfa3dac540af7, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010259099248, guid: 97a1306f9b483403990cfa3dac540af7, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010211844944, guid: 97a1306f9b483403990cfa3dac540af7,
-        type: 2}
-      propertyPath: moveForce
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010211844944, guid: 97a1306f9b483403990cfa3dac540af7,
-        type: 2}
-      propertyPath: maxSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013624302924, guid: 97a1306f9b483403990cfa3dac540af7, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97a1306f9b483403990cfa3dac540af7, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1429310566 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013624302924, guid: 97a1306f9b483403990cfa3dac540af7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1429310565}
---- !u!114 &1429310567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1429310566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9585272443e6cc04bb367f2ef3ac69a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1429803422
 GameObject:
   m_ObjectHideFlags: 0

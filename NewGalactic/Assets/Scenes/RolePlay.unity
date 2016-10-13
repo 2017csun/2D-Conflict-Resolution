@@ -223,11 +223,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010259099248, guid: 97a1306f9b483403990cfa3dac540af7, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.35
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000010259099248, guid: 97a1306f9b483403990cfa3dac540af7, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.35
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114000010211844944, guid: 97a1306f9b483403990cfa3dac540af7,
         type: 2}
@@ -750,7 +750,7 @@ Prefab:
     - target: {fileID: 114000013121055408, guid: 55506ac0d8d043a45abd72b9951e24f6,
         type: 2}
       propertyPath: destination
-      value: RolePlayPrep
+      value: Readable1
       objectReference: {fileID: 0}
     - target: {fileID: 61000012698150162, guid: 55506ac0d8d043a45abd72b9951e24f6,
         type: 2}

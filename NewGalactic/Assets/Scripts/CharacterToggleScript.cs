@@ -11,6 +11,8 @@ public class CharacterToggleScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		index = 3;
+		updateSprite ();
 	}
 	
 	// Update is called once per frame
