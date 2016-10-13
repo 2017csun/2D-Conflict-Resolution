@@ -14,7 +14,7 @@ public class DoorTransporter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (canTransport && Input.GetKey (KeyCode.DownArrow)) {
+		if (canTransport && Input.GetKeyDown (KeyCode.DownArrow)) {
 			lm.LoadScene (destination);
 		}
 	}
