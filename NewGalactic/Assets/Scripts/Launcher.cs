@@ -155,9 +155,7 @@ public class Launcher : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
-
-        //Always load the level named "Level"
-        PhotonNetwork.LoadLevel("Level");
+        PhotonNetwork.LoadLevel("Instructions");
     }
 
     #endregion
