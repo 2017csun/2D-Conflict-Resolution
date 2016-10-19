@@ -4,13 +4,6 @@ using System.Collections;
 
 public class Launcher : Photon.PunBehaviour
 {
-    /*
-	[Tooltip("The Ui Panel to let the user enter name, connect and play")]
-    public GameObject controlPanel;
-    [Tooltip("The UI Label to inform the user that the connection is in progress")]
-    public GameObject progressLabel;
-	*/
-
 	public GameObject hostGameButton;
 	public GameObject joinGameButton;
 	public GameObject hostRoomNameInput;
@@ -47,20 +40,11 @@ public class Launcher : Photon.PunBehaviour
     {
 		hostRoomNameInput.SetActive(false);
 		joinRoomNameInput.SetActive(false);
-		/*
-        progressLabel.SetActive(false);
-        controlPanel.SetActive(true);
-		*/
 	}
     #endregion
 
     #region Public Methods
-    /// <summary>
-    /// Start the connection process. 
-    /// - If already connected, we attempt joining a random room
-    /// - if not yet connected, Connect this application instance to Photon Cloud Network
-    /// </summary>
-	///
+
 	public void OpenInputFields(bool host) {
 		isHostPlayer = host;
 		if (isHostPlayer) {
@@ -79,30 +63,7 @@ public class Launcher : Photon.PunBehaviour
 		isConnecting = true;
 		PhotonNetwork.ConnectUsingSettings(_gameVersion);
 	}
-
-	/*
-    public void Connect()
-    {
-        // keep track of the will to join a room, because when we come back from the game we will get a callback that we are connected, so we need to know what to do then
-        isConnecting = true;
-
-        progressLabel.SetActive(true);
-        controlPanel.SetActive(false);
-
-        // we check if we are connected or not, we join if we are, else we initiate the connection to the server.
-        if (PhotonNetwork.connected)
-        {
-            // #Critical we need at this point to attempt joining a Random Room. If it fails, we'll get notified in OnPhotonRandomJoinFailed() and we'll create one.
-            PhotonNetwork.JoinRandomRoom();
-        }
-        else
-        {
-            // #Critical, we must first and foremost connect to Photon Online Server.
-            PhotonNetwork.ConnectUsingSettings(_gameVersion);
-        }
-    }
-    */
-    
+		
     public override void OnConnectedToMaster()
     {
         Debug.Log("DemoAnimator/Launcher: OnConnectedToMaster() was called by PUN");
@@ -120,13 +81,10 @@ public class Launcher : Photon.PunBehaviour
 			if (isHostPlayer) {
 				GameObject inputFieldGO = GameObject.Find("Canvas/Menu/HostGameNameInput");
 				InputField inputField = inputFieldGO.GetComponent<InputField>();
-
-				//Debug.Log("hostNameInput.text is" + hostRoomNameInput.text);
 				PhotonNetwork.CreateRoom (inputField.text, new RoomOptions () { MaxPlayers = 2 }, null);
 			} else {
 				GameObject inputFieldGO = GameObject.Find("Canvas/Menu/JoinGameNameInput");
 				InputField inputField = inputFieldGO.GetComponent<InputField>();
-
 				PhotonNetwork.JoinRoom (inputField.text);
 			}
 		}
@@ -136,10 +94,6 @@ public class Launcher : Photon.PunBehaviour
     public override void OnDisconnectedFromPhoton()
     {
         Debug.LogWarning("DemoAnimator/Launcher: OnDisconnectedFromPhoton() was called by PUN");
-        /*
-		progressLabel.SetActive(false);
-        controlPanel.SetActive(true);
-		*/
 	}
 
 	/*

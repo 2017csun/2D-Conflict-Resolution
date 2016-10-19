@@ -19,13 +19,28 @@ Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewG
 Loading C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.086 seconds
+- Completed reload, in  0.080 seconds
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.063577 ms
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 386)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 386)
+
+Scene 'PunBasics-Launcher' (-1) couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
+To add a scene to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 532)
+
 Initialize engine version: 5.4.0f3 (a6d8d714de6f)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -47,7 +62,7 @@ Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewG
 Loading C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.057 seconds
+- Completed reload, in  0.091 seconds
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -55,22 +70,7 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-<RI> Initialized touch support.
-UnloadTime: 2.514182 ms
-DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
- 
-(Filename:  Line: 386)
-
-DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
- 
-(Filename:  Line: 386)
-
-Scene 'PunBasics-Launcher' (-1) couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
-To add a scene to the build settings use the menu File->Build Settings...
- 
-(Filename:  Line: 532)
-
-UnloadTime: 0.871987 ms
+UnloadTime: 1.085387 ms
 DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
  
 (Filename:  Line: 386)
@@ -104,7 +104,7 @@ OperationResponse 230: ReturnCode: 0.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Received your UserID from server. Updating local value to: 8545b821-6e04-4f60-bc9e-e1cee115b2e3
+Received your UserID from server. Updating local value to: 584220f0-4937-4b6c-af3b-f8fa0d4aac27
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -173,10 +173,10 @@ DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a roo
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.364075 ms
+UnloadTime: 2.180611 ms
 
 Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 474.
-Total: 0.862579 ms (FindLiveObjects: 0.059444 ms CreateObjectMapping: 0.064575 ms MarkObjects: 0.717176 ms  DeleteObjects: 0.020527 ms)
+Total: 0.603420 ms (FindLiveObjects: 0.054739 ms CreateObjectMapping: 0.041482 ms MarkObjects: 0.492658 ms  DeleteObjects: 0.013684 ms)
 
 SwitchToProtocol: Tcp PhotonNetwork.connected: False
  
@@ -198,7 +198,7 @@ OperationResponse 230: ReturnCode: 0.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Received your UserID from server. Updating local value to: 9994149c-0f59-4b99-9258-d701fd5e5fd7
+Received your UserID from server. Updating local value to: 6370f198-0b3f-4e17-9aef-ef516ae64484
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -271,16 +271,16 @@ DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a roo
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.367924 ms
+UnloadTime: 2.237061 ms
 
 Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 474.
-Total: 0.385744 ms (FindLiveObjects: 0.030791 ms CreateObjectMapping: 0.026086 ms MarkObjects: 0.317319 ms  DeleteObjects: 0.011119 ms)
+Total: 1.119600 ms (FindLiveObjects: 0.135566 ms CreateObjectMapping: 0.068424 ms MarkObjects: 0.862151 ms  DeleteObjects: 0.050463 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.815965 ms
+UnloadTime: 0.709051 ms
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 783.
-Total: 0.439201 ms (FindLiveObjects: 0.055167 ms CreateObjectMapping: 0.044476 ms MarkObjects: 0.326300 ms  DeleteObjects: 0.012401 ms)
+Total: 0.970776 ms (FindLiveObjects: 0.062009 ms CreateObjectMapping: 0.046186 ms MarkObjects: 0.823235 ms  DeleteObjects: 0.038061 ms)
 
 We are Instantiating LocalPlayer from Level
  
@@ -335,10 +335,10 @@ OnEvent: Event 206.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.756521 ms
+UnloadTime: 0.794582 ms
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 802.
-Total: 1.282108 ms (FindLiveObjects: 0.154383 ms CreateObjectMapping: 0.182180 ms MarkObjects: 0.920312 ms  DeleteObjects: 0.023093 ms)
+Total: 1.439058 ms (FindLiveObjects: 0.180470 ms CreateObjectMapping: 0.156093 ms MarkObjects: 1.072985 ms  DeleteObjects: 0.026942 ms)
 
 We are Instantiating LocalPlayer from Level
  
@@ -380,6 +380,194 @@ OnEvent: Event 201.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
 OnEvent: Event 206.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
@@ -412,7 +600,27 @@ OnEvent: Event 201.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
 OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Should double jump
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -425,62 +633,6 @@ OnEvent: Event 201.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 206.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -498,15 +650,15 @@ OnEvent: Event 201.
 
 Reg jump
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+(FilenanEmen: C:/beintsl 2ve/0nit
+ /
+(Fil/enaimact: C:/buiatld/slaveonun/runtimed/artUfnityEngineaDedbucoBinon/runtiene/cUn Line: 4e)
 
-Reg jump
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+DebugBRneg js.mge
+n.
+cpip Line: ::/2b
 
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+uildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 OnEvent: Event 201.
  
@@ -524,43 +676,7 @@ OnEvent: Event 201.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 206.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
+Should double jump
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -582,17 +698,41 @@ OnEvent: Event 201.
 
 Reg jump
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDeOugBindinns.gen.cppEvine: 42)
-
-t 20Re
- ju
-(Fp
-le
-namee: C:/bu:ilbdslave/un/ity/b/buli/daartiiafactgengenerated/comm/oun/imu/UnityEnginyEDegineDebugBnin.ginncpp Linecp 42)
-n
-e: 42)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -600,6 +740,38 @@ Should double jump
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 201.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
 Reg jump
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
@@ -608,69 +780,17 @@ OnEvent: Event 201.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+RegOjnEve
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
+:Fi Evamnt: C:2buil
+ slav
+(unitname: ld/artifacts/generatC:/comm/n/uiuntime/UunittyEbuiinlD/arutBindinsgsegenr.cpp Linommo2)/r
+u
+ntime/UShould idoubblgBindin
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 206.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Adding torque
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-OnEvent: Event 201.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+(gsl.gemn.cCpp Linde: v2e/
+u
+nity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 OnEvent: Event 201.
  
@@ -708,51 +828,87 @@ OnEvent: Event 206.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+OnStatusChanged: Disconnect current State: Disconnecting
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+Network destroy Instantiated GO: hero(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+Network destroy Instantiated GO: hero(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+UnloadTime: 1.347967 ms
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 386)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 386)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 22b4 -> priority: 1 
+OnEvent: Event 254.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+HandleEventLeave for player ID: 1 evLeave: Event 254: {(Byte)252=(Int32[])System.Int32[], (Byte)203=(Int32)2, (Byte)254=(Int32)1}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+Network destroy Instantiated GO: hero(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+OnPhotonPlayerDisconnected() 
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+OnPhotonPlayerConnected isMasterClient True
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+PhotonNetwork : Loading Level
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.233356 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 802.
+Total: 0.539700 ms (FindLiveObjects: 0.066714 ms CreateObjectMapping: 0.056450 ms MarkObjects: 0.409693 ms  DeleteObjects: 0.005559 ms)
+
+We are Instantiating LocalPlayer from Level
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 201.
+Registered PhotonView: 2002
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-OnEvent: Event 206.
+OnStatusChanged: Disconnect current State: Disconnecting
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+Network destroy Instantiated GO: hero(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Network destroy Instantiated GO: hero(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+UnloadTime: 1.256021 ms
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 386)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 386)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 172c -> priority: 1 
