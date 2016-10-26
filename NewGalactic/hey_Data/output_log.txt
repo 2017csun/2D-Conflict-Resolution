@@ -19,7 +19,7 @@ Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewG
 Loading C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.339 seconds
+- Completed reload, in  0.113 seconds
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Joshuah\Documents\GitHub\2D-Conflict-Resolution\NewGalactic\hey_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -27,7 +27,7 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.262436 ms
+UnloadTime: 1.184175 ms
 DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
  
 (Filename:  Line: 386)
@@ -61,7 +61,7 @@ OperationResponse 230: ReturnCode: 0.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Received your UserID from server. Updating local value to: f4488bd8-3742-4953-ac6c-514d2c020032
+Received your UserID from server. Updating local value to: af5d284f-34fa-4ccb-a176-03a5e7c91871
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -130,22 +130,132 @@ DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a roo
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.139413 ms
+UnloadTime: 2.205843 ms
 
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 469.
-Total: 0.443477 ms (FindLiveObjects: 0.032501 ms CreateObjectMapping: 0.028225 ms MarkObjects: 0.366072 ms  DeleteObjects: 0.015823 ms)
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 475.
+Total: 0.375053 ms (FindLiveObjects: 0.028225 ms CreateObjectMapping: 0.034640 ms MarkObjects: 0.301068 ms  DeleteObjects: 0.010691 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.716321 ms
+UnloadTime: 0.711617 ms
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 778.
-Total: 0.581182 ms (FindLiveObjects: 0.056022 ms CreateObjectMapping: 0.056878 ms MarkObjects: 0.455452 ms  DeleteObjects: 0.012401 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 784.
+Total: 0.484960 ms (FindLiveObjects: 0.067569 ms CreateObjectMapping: 0.042337 ms MarkObjects: 0.360085 ms  DeleteObjects: 0.013684 ms)
 
 We are Instantiating LocalPlayer from Level
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Failed to Instantiate prefab:hero. Prefab must have a PhotonView component.
+Registered PhotonView: 1001
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Adding torque
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Should double jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Should double jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Should double jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Adding torque
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Should double jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Reg jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Should double jump
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OperationResponse 254: ReturnCode: 0.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnStatusChanged: Disconnect current State: DisconnectingFromGameserver
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Network destroy Instantiated GO: hero(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.144831 ms
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 386)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 386)
+
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 425.
+Total: 0.608980 ms (FindLiveObjects: 0.028652 ms CreateObjectMapping: 0.022238 ms MarkObjects: 0.336136 ms  DeleteObjects: 0.221525 ms)
+
+We are Instantiating LocalPlayer from MainMenu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Failed to Instantiate prefab: hero. Client should be in a room. Current connectionStateDetailed: ConnectingToMasterserver
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnStatusChanged: Connect current State: ConnectingToMasterserver
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Connected to masterserver.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnStatusChanged: EncryptionEstablished current State: Authenticating
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OnEvent: Event 226.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OperationResponse 230: ReturnCode: 0.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+DemoAnimator/Launcher: OnConnectedToMaster() was called by PUN
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -153,14 +263,9 @@ OnStatusChanged: Disconnect current State: Disconnecting
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-UnloadTime: 0.924589 ms
-DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+DemoAnimator/Launcher: OnDisconnectedFromPhoton() was called by PUN
  
-(Filename:  Line: 386)
-
-DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
- 
-(Filename:  Line: 386)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: e70 -> priority: 1 
+  Thread -> id: 2744 -> priority: 1 
