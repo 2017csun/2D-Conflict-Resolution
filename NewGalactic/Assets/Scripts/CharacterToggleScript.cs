@@ -7,7 +7,7 @@ public class CharacterToggleScript : MonoBehaviour {
     SpriteRenderer sr;
     int index = 0;
     //array that corresponds to prefabs of the diff characters
-    Color[] colors = { Color.cyan, Color.green, Color.red, Color.white, Color.clear};
+    Color[] colors = { Color.cyan, Color.green, Color.red, Color.white, Color.yellow, Color.blue, Color.magenta};
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +20,7 @@ public class CharacterToggleScript : MonoBehaviour {
             PlayerPrefs.SetFloat("red", colors[index].r);
             PlayerPrefs.SetFloat("green", colors[index].g);
             PlayerPrefs.SetFloat("blue", colors[index].b);
+
             SceneManager.LoadScene("Level");
         }
 	    else if (Input.GetKeyDown(KeyCode.LeftArrow))

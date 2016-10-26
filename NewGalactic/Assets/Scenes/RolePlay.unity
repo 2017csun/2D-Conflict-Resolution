@@ -375,6 +375,41 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224000013938348788, guid: a1a5cf74cb33ffb42a205cb47f5491a0,
     type: 2}
   m_PrefabInternal: {fileID: 2145588488}
+--- !u!1 &758939766 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011061168900, guid: d0093d43e20f9486bb7efa917f431e11,
+    type: 2}
+  m_PrefabInternal: {fileID: 1408263884}
+--- !u!68 &758939767
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758939766}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: 13, y: -10}
+  - {x: 13, y: 0}
+--- !u!68 &758939770
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758939766}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: 21, y: 0}
+  - {x: 21, y: -10}
 --- !u!1 &1085407141
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +686,21 @@ Prefab:
       value: 
       objectReference: {fileID: 21300006, guid: 71aa305faf2bdd341a76ea393f205b58,
         type: 3}
+    - target: {fileID: 68000013622003634, guid: d0093d43e20f9486bb7efa917f431e11,
+        type: 2}
+      propertyPath: m_Points.Array.data[0].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 68000013622003634, guid: d0093d43e20f9486bb7efa917f431e11,
+        type: 2}
+      propertyPath: m_Points.Array.data[2].y
+      value: 480
+      objectReference: {fileID: 0}
+    - target: {fileID: 68000013622003634, guid: d0093d43e20f9486bb7efa917f431e11,
+        type: 2}
+      propertyPath: m_Points.Array.data[3].y
+      value: 480
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0093d43e20f9486bb7efa917f431e11, type: 2}
   m_IsPrefabParent: 0
