@@ -2,7 +2,8 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : Photon.PunBehaviour
+{
 
 	public void Awake(){
 		DontDestroyOnLoad (gameObject);
@@ -10,7 +11,7 @@ public class LevelManager : MonoBehaviour {
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        PhotonNetwork.LoadLevel(sceneName);
     }
 
 	public void ResetGame(){
