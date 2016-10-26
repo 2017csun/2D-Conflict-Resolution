@@ -15,7 +15,7 @@ public class LevelManager : Photon.PunBehaviour
     }
 
 	public void ResetGame(){
-		LoadScene("MainMenu");
+		LoadScene ("MainMenu");
 
 	}
 	
