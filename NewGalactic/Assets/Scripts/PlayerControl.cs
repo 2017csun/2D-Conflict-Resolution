@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
+using ExitGames.Demos.DemoAnimator;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : Photon.PunBehaviour
 {
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
@@ -14,22 +16,48 @@ public class PlayerControl : MonoBehaviour
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.		// Delay for when the taunt should happen.
 
-
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	public Animator anim;					// Reference to the player's animator component.
 
 	public bool dontScroll = false;
 
+    [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
+    public static GameObject LocalPlayerInstance;
 
-	void Awake()
+    void Awake()
 	{
-		// Setting up references.
-		groundCheck = transform.Find("groundCheck");
+        if (photonView.isMine)
+        {
+            PlayerManager.LocalPlayerInstance = this.gameObject;
+        }
+
+        // #Critical
+        // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
+        //DontDestroyOnLoad(this.gameObject);
+
+        // Setting up references.
+        groundCheck = transform.Find("groundCheck");
 	}
 
+    void Start()
+    {
+        CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
-	void Update()
+        if (_cameraWork != null)
+        {
+            if (photonView.isMine)
+            {
+                _cameraWork.OnStartFollowing();
+            }
+        }
+        else
+        {
+            Debug.LogError("<Color=Red>Missing</Color> CameraWork Component on playerPrefab.", this);
+        }
+    }
+
+    void Update()
 	{
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
@@ -44,8 +72,6 @@ public class PlayerControl : MonoBehaviour
 			doublejump = true;
 		}
 	}
-
-
 	void FixedUpdate ()
 	{
 		// Cache the horizontal input.
