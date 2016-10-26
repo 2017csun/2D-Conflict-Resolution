@@ -6,7 +6,8 @@ public class LevelManager : MonoBehaviour {
 
 	public void Awake(){
 		DontDestroyOnLoad (gameObject);
-	}
+        PhotonNetwork.automaticallySyncScene = true;
+    }
 
     public void LoadScene(string sceneName)
     {
