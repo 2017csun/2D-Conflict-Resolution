@@ -10,6 +10,8 @@ public class GameManager : Photon.PunBehaviour
 
     void Start()
     {
+        PhotonNetwork.automaticallySyncScene = true;
+
         if (playerPrefab == null)
         {
             Debug.LogError("<Color=Red>Missing</a> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
