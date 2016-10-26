@@ -34,7 +34,7 @@ public class PlayerControl : Photon.PunBehaviour
 
         // #Critical
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
 
         // Setting up references.
         groundCheck = transform.Find("groundCheck");
