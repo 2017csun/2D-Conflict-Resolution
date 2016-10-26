@@ -2,9 +2,9 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : Photon.PunBehaviour {
 
-	public void Awake(){
+	public void Start(){
 		DontDestroyOnLoad (gameObject);
         PhotonNetwork.automaticallySyncScene = true;
     }
