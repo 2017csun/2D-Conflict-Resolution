@@ -5,7 +5,7 @@ using System.Collections;
 public class LevelManager : Photon.PunBehaviour {
 
 	public void Start(){
-		DontDestroyOnLoad (this.gameObject);
+		//DontDestroyOnLoad (this.gameObject);
         PhotonNetwork.automaticallySyncScene = true;
     }
 
