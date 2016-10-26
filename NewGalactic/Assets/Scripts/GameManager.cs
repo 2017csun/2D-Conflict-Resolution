@@ -38,7 +38,7 @@ public class GameManager : Photon.PunBehaviour
         if (PhotonNetwork.isMasterClient)
         {
             Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
-            LoadArena();
+            //LoadArena();
         }
     }
 
@@ -50,10 +50,11 @@ public class GameManager : Photon.PunBehaviour
         {
             Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
 
-            LoadArena();
+            //LoadArena();
         }
     }
 
+    /*
     void LoadArena()
     {
         if (!PhotonNetwork.isMasterClient)
@@ -66,6 +67,7 @@ public class GameManager : Photon.PunBehaviour
             PhotonNetwork.LoadLevel("Level");
         }
     }
+    */
 
     /// <summary>
     /// Called when the local player left the room. We need to load the launcher scene.
