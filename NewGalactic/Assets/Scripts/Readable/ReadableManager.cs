@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ReadableManager : MonoBehaviour {
-	public bool shouldFirstPerson = false;
+	public bool shouldFirstPerson = true;
 	public Image arrowKey;
 	public Text mainText;
 	public ReadableTrigger currTrigger = null;
@@ -27,12 +27,16 @@ public class ReadableManager : MonoBehaviour {
 	}
 
 	public void SetShouldFirstPerson(){
-		bool shouldFP = firstp.isOn;
+		bool shouldFP = true;
 		shouldFirstPerson = shouldFP;
 
 		if (currTrigger != null) {
 			currTrigger.updateText ();
 		}
+	}
+
+	public void UpdateSimple(string simpleText){
+		mainText.text = simpleText;
 	}
 		
 }

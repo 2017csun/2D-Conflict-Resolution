@@ -25,7 +25,6 @@ public class ReadableTrigger : MonoBehaviour {
 	}
 
 	public void updateText(){
-		Debug.Log ("In update text of trig, should first person is " + readableMan.shouldFirstPerson);
-		readableMan.UpdateText (readableMan.shouldFirstPerson ? firstPersonString : stringToShow, this);
+		readableMan.UpdateText (firstPersonString, this);
 	}
 }
