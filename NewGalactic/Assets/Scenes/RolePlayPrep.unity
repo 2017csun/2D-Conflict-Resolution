@@ -413,7 +413,27 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 406160544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 815899343}
+        m_MethodName: UpdateSimple
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Collaboration is a win-win approach to conflict management.
+            It is based on the belief that it really is possible to come up with a
+            solution that will satisfy the concerns and meet the needs of everyone
+            involved. During attempts to manage conflict using this approach, the
+            focus is on working honestly and openly with the other person to come
+            up with a solution that meets the underlying concerns of all parties.
+            While this type of win-win solution is possible in some situations, that
+            is not always the case. When you start out with this approach, it's important
+            to be prepared to change strategies if it becomes apparent that the strategy
+            will not be successful.
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &406160544
@@ -516,7 +536,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Collaborating
+  m_Text: Competing
 --- !u!222 &463642024
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -651,6 +671,7 @@ GameObject:
   - 223: {fileID: 815899341}
   - 114: {fileID: 815899340}
   - 114: {fileID: 815899339}
+  - 114: {fileID: 815899343}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -733,6 +754,7 @@ RectTransform:
   - {fileID: 1360687320}
   - {fileID: 1929655994}
   - {fileID: 1575798965}
+  - {fileID: 1178482802}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
@@ -740,6 +762,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &815899343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 815899338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb425f54fb7cf442caa49212b54de2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldFirstPerson: 0
+  arrowKey: {fileID: 0}
+  mainText: {fileID: 1178482800}
+  currTrigger: {fileID: 0}
+  firstp: {fileID: 0}
 --- !u!1001 &844860341
 Prefab:
   m_ObjectHideFlags: 0
@@ -945,7 +983,25 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 870719045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 815899343}
+        m_MethodName: UpdateSimple
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: The avoidance strategy involves staying away from conflict
+            instead of addressing the issue. Avoidance may manifest as withdrawing
+            or backing down when confronted, changing the subject or sidestepping
+            the issue, pretending like something isn't bothering you or that there
+            isn't really a problem, putting off dealing with things, or physically
+            removing yourself from the situation by walking away or maybe even quitting
+            your job. While avoiding a conflict won't help solve the point of disagreement,
+            there are some times when it is the best course of action.
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &870719045
@@ -1069,6 +1125,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAuto: 1
   textToBlink: {fileID: 1101760805}
+--- !u!1 &1178482799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1178482802}
+  - 222: {fileID: 1178482801}
+  - 114: {fileID: 1178482800}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1178482800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178482799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 47f1a172544a0994087934248f14b919, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1178482801
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178482799}
+--- !u!224 &1178482802
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178482799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 815899342}
+  m_RootOrder: 8
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.2499924, y: 64}
+  m_SizeDelta: {x: 578, y: 159}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1360687319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1274,25 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1360687322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 815899343}
+        m_MethodName: UpdateSimple
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Many workplace conflicts are best handled by compromise.
+            This approach involves elements of collaboration, in that those who are
+            involved in the decision must reach an agreement on the decision. However,
+            it does not have the win-win element of collaboration. Instead, compromising
+            involves an element of accommodation, in that everyone who is involved
+            gives up part of what they want and an element of competition, in that
+            everyone gets part of what they want. The end result is a workable solution
+            that partially meets the needs of everyone who is involved.
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1360687322
@@ -1329,7 +1477,23 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1535624000}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 815899343}
+        m_MethodName: UpdateSimple
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: As a conflict management strategy, accommodation involves
+            a degree of self-sacrifice through 'giving-in'. One person gives up his
+            or her own concerns so that the concerns of the other person can be met.
+            This is often done for the purpose of 'keeping the peace' or maintaining
+            harmony. While accommodating isn't an appropriate approach in all situations,
+            there are sometimes that it is a good course of action.
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1535624000
@@ -1532,7 +1696,24 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1747111590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 815899343}
+        m_MethodName: UpdateSimple
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: As a conflict management strategy, competition is a win-lose
+            approach in which conflict is viewed as a struggle. It assumes that the
+            only way that you can get your goals is to 'win' while the other person
+            (or people) involved must lose. When you use this approach, the focus
+            is on pursuing your goals at the expense of others. This approach is appropriate
+            in a few specific situations, but can permanently damage relationships
+            if used too often or in the wrong types of situations.
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1747111590

@@ -21,7 +21,7 @@ public class CharacterToggleScript : MonoBehaviour {
             PlayerPrefs.SetFloat("green", colors[index].g);
             PlayerPrefs.SetFloat("blue", colors[index].b);
 
-            SceneManager.LoadScene("Level");
+            SceneManager.LoadScene("Instructions");
         }
 	    else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {

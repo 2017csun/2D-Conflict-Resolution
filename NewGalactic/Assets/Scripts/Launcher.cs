@@ -109,7 +109,7 @@ public class Launcher : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
-        PhotonNetwork.LoadLevel("Instructions");
+        PhotonNetwork.LoadLevel("CharacterSelection");
     }
 
     #endregion
