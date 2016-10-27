@@ -12,8 +12,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-namespace ExitGames.Demos.DemoAnimator
-{
+//namespace ExitGames.Demos.DemoAnimator
+//{
 	/// <summary>
 	/// Camera work. Follow a target
 	/// </summary>
@@ -37,12 +37,14 @@ namespace ExitGames.Demos.DemoAnimator
 		[Tooltip("Set this as false if a component of a prefab being instanciated by Photon Network, and manually call OnStartFollowing() when and if needed.")]
 		public bool followOnStart = false;
 
+		public Transform cameraTransform;
+
+
 		#endregion
 		
 		#region Private Properties
 
 		// cached transform of the target
-		Transform cameraTransform;
 
 		// maintain a flag internally to reconnect if target is lost or camera is switched
 		bool isFollowing = false;
@@ -98,7 +100,7 @@ namespace ExitGames.Demos.DemoAnimator
 		/// </summary>
 		public void OnStartFollowing()
 		{	      
-			cameraTransform = Camera.main.transform;
+			//cameraTransform = Camera.main.transform;
 			//isFollowing = true;
 			// we don't smooth anything, we go straight to the right camera shot
 			Cut();
@@ -178,4 +180,4 @@ namespace ExitGames.Demos.DemoAnimator
 
 		#endregion
 	}
-}
+//}

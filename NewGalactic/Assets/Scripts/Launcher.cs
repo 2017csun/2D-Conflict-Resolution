@@ -50,10 +50,13 @@ public class Launcher : Photon.PunBehaviour
 		if (isHostPlayer) {
 			hostGameButton.SetActive (false);
 			hostRoomNameInput.SetActive(true);
+			GameObject.FindObjectOfType<CharManager> ().isChar1 = true;
 		} else {
 			//hostGameButton.SetActive (false);
 			joinGameButton.SetActive(false);
 			joinRoomNameInput.SetActive(true);
+			GameObject.FindObjectOfType<CharManager> ().isChar1 = false;
+
 		}
 	}
 
@@ -109,7 +112,9 @@ public class Launcher : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
-        PhotonNetwork.LoadLevel("CharacterSelection");
+        //PhotonNetwork.LoadLevel("CharacterSelection");
+		((LevelManager)GameObject.FindObjectOfType<LevelManager>()).LoadScene("CharacterSelection");
+
     }
 
     #endregion

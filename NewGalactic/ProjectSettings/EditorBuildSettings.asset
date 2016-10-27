@@ -27,3 +27,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Spinnable1.unity
   - enabled: 1
     path: Assets/Scenes/VotingScene.unity
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity

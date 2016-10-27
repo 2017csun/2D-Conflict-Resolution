@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012025742124}
   - 114: {fileID: 114000013702811242}
-  - 114: {fileID: 114000011542266154}
+  - 114: {fileID: 114000011890468394}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000011542266154
+--- !u!114 &114000011890468394
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -56,12 +56,12 @@ MonoBehaviour:
   group: 0
   prefixBackup: -1
   observed: {fileID: 0}
-  synchronization: 0
+  synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 4000012025742124}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -77,3 +77,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d07edf384274394dbd8cc9898b8fa38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camPrefab: {fileID: 1000013950599132, guid: 5e292a117727a423b8d75dc724aa986b, type: 2}

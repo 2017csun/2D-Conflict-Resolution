@@ -15,7 +15,10 @@ public class CharacterEnterScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Return))
         {
             var nameObject = gameObject.GetComponent<InputField>();
-            PlayerPrefs.SetString("name", nameObject.text);
+				GameObject.FindObjectOfType<CharManager> ().nameChar1 = nameObject.text;
+				GameObject.FindObjectOfType<CharManager> ().nameChar2 = nameObject.text;
+
+
         }
     }
 }
