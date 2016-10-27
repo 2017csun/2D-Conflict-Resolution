@@ -10,6 +10,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace ExitGames.Demos.DemoAnimator
 {
@@ -44,7 +45,7 @@ namespace ExitGames.Demos.DemoAnimator
 		Transform cameraTransform;
 
 		// maintain a flag internally to reconnect if target is lost or camera is switched
-		bool isFollowing;
+		bool isFollowing = false;
 
 		// Represents the current velocity, this value is modified by SmoothDamp() every time you call it.
 		private float heightVelocity = 0.0f;
@@ -76,13 +77,13 @@ namespace ExitGames.Demos.DemoAnimator
 		{
 			// The transform target may not destroy on level load, 
 			// so we need to cover corner cases where the Main Camera is different everytime we load a new scene, and reconnect when that happens
-			if (cameraTransform == null && isFollowing)
+			if (cameraTransform == null && SceneManager.GetActiveScene().buildIndex == 3)
 			{
 				OnStartFollowing();
 			}
 
 			// only follow is explicitly declared
-			if (isFollowing) {
+			if (SceneManager.GetActiveScene().buildIndex == 3) {
 				Apply ();
 			}
 		}
@@ -98,7 +99,7 @@ namespace ExitGames.Demos.DemoAnimator
 		public void OnStartFollowing()
 		{	      
 			cameraTransform = Camera.main.transform;
-			isFollowing = true;
+			//isFollowing = true;
 			// we don't smooth anything, we go straight to the right camera shot
 			Cut();
 		}
