@@ -177,11 +177,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!224 &744083940 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224000013938348788, guid: a1a5cf74cb33ffb42a205cb47f5491a0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1006898738}
 --- !u!1001 &1006898738
 Prefab:
   m_ObjectHideFlags: 0
@@ -534,7 +529,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1270866998}
-  - {fileID: 744083940}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
@@ -584,13 +578,23 @@ Prefab:
     - target: {fileID: 114000011542266154, guid: 8248c80e456b545dfbf37203495ef68f,
         type: 2}
       propertyPath: viewIdField
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114000011542266154, guid: 8248c80e456b545dfbf37203495ef68f,
         type: 2}
       propertyPath: instantiationId
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011542266154, guid: 8248c80e456b545dfbf37203495ef68f,
+        type: 2}
+      propertyPath: synchronization
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011542266154, guid: 8248c80e456b545dfbf37203495ef68f,
+        type: 2}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 1718930946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8248c80e456b545dfbf37203495ef68f, type: 2}
   m_IsPrefabParent: 0
@@ -600,6 +604,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1718930944}
   m_Script: {fileID: 11500000, guid: 3d07edf384274394dbd8cc9898b8fa38, type: 3}
+--- !u!4 &1718930946 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000012025742124, guid: 8248c80e456b545dfbf37203495ef68f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1718930944}
 --- !u!1001 &2040433627
 Prefab:
   m_ObjectHideFlags: 0
