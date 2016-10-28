@@ -28,6 +28,7 @@ public class GameManager : Photon.PunBehaviour
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
 				GameObject camera = Instantiate(camPrefab) as GameObject;
+				camera.transform.position = Vector2.zero;
 				Transform sdn = camera.transform;
 				Debug.Log ("CAMERA TRANSFORM IS " + sdn);
 				if (camera != null)

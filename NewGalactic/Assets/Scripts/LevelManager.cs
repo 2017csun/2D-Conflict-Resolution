@@ -33,6 +33,8 @@ public class LevelManager : Photon.PunBehaviour {
 				PhotonNetwork.player.SetCustomProperties (someCustomPropertiesToSet);
 			}
 		}
+		ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
+		ApplyCharacterScript.isReadyToNextLevel = false;
     }
 
 

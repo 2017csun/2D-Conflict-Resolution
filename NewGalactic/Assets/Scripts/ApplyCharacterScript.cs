@@ -3,6 +3,9 @@ using System.Collections;
 
 public class ApplyCharacterScript :  Photon.PunBehaviour {
 
+	public static bool isReadyToNextLevel = false;
+	public static bool otherPlayerIsReadyToNextLevel = false;
+
 	// Use this for initialization
 	void Start () {
         var sr = gameObject.GetComponentInChildren<SpriteRenderer>();
@@ -64,12 +67,13 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 			stream.SendNext (GameObject.FindObjectOfType<CharManager>().redChar1);
 			stream.SendNext (GameObject.FindObjectOfType<CharManager>().greenChar1);
 			stream.SendNext (GameObject.FindObjectOfType<CharManager>().blueChar1);
+			stream.SendNext ((isReadyToNextLevel ? "true" : "false"));
 		} else {
 			Debug.Log ("READING STREAM");
 			GameObject.FindObjectOfType<CharManager>().redChar2 = (float) stream.ReceiveNext();
 			GameObject.FindObjectOfType<CharManager>().greenChar2 = (float) stream.ReceiveNext();
 			GameObject.FindObjectOfType<CharManager>().blueChar2 = (float) stream.ReceiveNext();
-
+			otherPlayerIsReadyToNextLevel = (stream.ReceiveNext ().Equals("true") ? true : false);
 		}
 	}
 }
