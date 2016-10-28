@@ -7,6 +7,7 @@ public class NumberDetector : Photon.PunBehaviour {
 
 	char[] nums = new char[]{'0','1','2','3','4','5','6','7','8','9'};
 	public Text fieldText;
+	public bool isResolved;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,7 @@ public class NumberDetector : Photon.PunBehaviour {
 
 	}
 
-	public void CheckForNums(bool isResolved){
+	public void CheckForNums(){
 		string s = GetComponent<InputField> ().text.ToString ();
 		Debug.Log ("CHecking string: " + s);
 		char[] chars = s.ToCharArray();
@@ -26,7 +27,8 @@ public class NumberDetector : Photon.PunBehaviour {
 		for (int i = 0; i < chars.Length; i++) {
 			for (int j = 0; j < nums.Length; j++) {
 				if(chars[i] == nums[j]){
-					sNew += "" + chars [i];
+					sNew += "" + nums [j];
+					break;
 				}
 			}
 		}
