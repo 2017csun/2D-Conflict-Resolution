@@ -19,6 +19,13 @@ public class DoorTransporter : MonoBehaviour {
 			ApplyCharacterScript.isReadyToNextLevel = true;
 	
 			if (ApplyCharacterScript.otherPlayerIsReadyToNextLevel) {
+				/*NumberDetector[] dets = GameObject.FindObjectsOfType<NumberDetector> ();
+				if (dets != null) {
+					foreach (NumberDetector n in dets) {
+						n.CheckForNums ();
+					}
+				}*/
+
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;
 				lm.LoadScene (destination);

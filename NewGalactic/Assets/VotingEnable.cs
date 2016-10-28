@@ -10,8 +10,10 @@ public class VotingEnable : Photon.PunBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (PhotonNetwork.player.isMasterClient) {
+			//ApplyCharacterScript.isReadyToNextLevel = true;
 		} else {
 			voteOtherButton.gameObject.SetActive (false);
+			//ApplyCharacterScript.otherPlayerIsReadyToNextLevel = true;
 			isMaster = true;
 		}
 	}
