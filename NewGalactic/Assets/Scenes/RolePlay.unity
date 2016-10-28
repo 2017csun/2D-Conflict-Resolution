@@ -325,7 +325,7 @@ MonoBehaviour:
   timeLeft: 10
   bt: {fileID: 1085407143}
   textToCount: {fileID: 1085407145}
-  transporter: {fileID: 0}
+  transporter: {fileID: 1414694934}
 --- !u!114 &1085407145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +675,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55506ac0d8d043a45abd72b9951e24f6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1414694934 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 116044, guid: 55506ac0d8d043a45abd72b9951e24f6, type: 2}
+  m_PrefabInternal: {fileID: 1414694933}
 --- !u!1001 &2145588488
 Prefab:
   m_ObjectHideFlags: 0

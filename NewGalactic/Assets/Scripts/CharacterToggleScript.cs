@@ -14,6 +14,8 @@ public class CharacterToggleScript : Photon.PunBehaviour {
 		GameObject.FindObjectOfType<CharManager> ().redChar1 = colors [index].r;
 		GameObject.FindObjectOfType<CharManager> ().greenChar1 = colors [index].g;
 		GameObject.FindObjectOfType<CharManager> ().blueChar1 = colors [index].b;
+
+		updateSprite ();
 	}
 
 	// Update is called once per frame
@@ -29,7 +31,10 @@ public class CharacterToggleScript : Photon.PunBehaviour {
         }
 	    else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            index = Mathf.Abs((index + 1) % colors.Length);
+			index--;
+			if (index < 0) {
+				index = 0;
+			}
             updateSprite();
 			GameObject.FindObjectOfType<CharManager> ().redChar1 = colors [index].r;
 			GameObject.FindObjectOfType<CharManager> ().greenChar1 = colors [index].g;
@@ -37,7 +42,10 @@ public class CharacterToggleScript : Photon.PunBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            index = Mathf.Abs((index + 1) % colors.Length);
+			index++;
+			if (index >= colors.Length) {
+				index = colors.Length - 1;
+			}
             updateSprite();
 			GameObject.FindObjectOfType<CharManager> ().redChar1 = colors [index].r;
 			GameObject.FindObjectOfType<CharManager> ().greenChar1 = colors [index].g;

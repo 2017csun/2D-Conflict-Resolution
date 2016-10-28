@@ -65,7 +65,7 @@ using UnityEngine.SceneManagement;
 		void Start()
 		{
 			// Start following the target if wanted.
-			if (followOnStart)
+		if (followOnStart && SceneManager.GetActiveScene().buildIndex == 3)
 			{
 				OnStartFollowing();
 			}
@@ -85,9 +85,13 @@ using UnityEngine.SceneManagement;
 			}
 
 			// only follow is explicitly declared
-			if (SceneManager.GetActiveScene().buildIndex == 3) {
-				Apply ();
-			}
+		if (SceneManager.GetActiveScene ().buildIndex == 3) {
+			Apply ();
+		} else {
+			cameraTransform.position = new Vector3( 0f, 0f, cameraTransform.position.z );
+			cameraTransform.rotation = Quaternion.identity;//yRotation * Quaternion.LookRotation( relativeOffset );
+
+		}
 		}
 
 		#endregion
@@ -141,10 +145,10 @@ using UnityEngine.SceneManagement;
 	        cameraTransform.position += currentRotation * Vector3.back * distance;
 
 	        // Set the height of the camera
-	        cameraTransform.position = new Vector3( cameraTransform.position.x, currentHeight, cameraTransform.position.z );
+	        cameraTransform.position = new Vector3( cameraTransform.position.x, 0f, cameraTransform.position.z );
 
 	        // Always look at the target	
-	        SetUpRotation(targetCenter);
+	       SetUpRotation(targetCenter);
 	    }
 
 	   
@@ -174,7 +178,7 @@ using UnityEngine.SceneManagement;
 	        Quaternion yRotation = Quaternion.LookRotation( new Vector3( offsetToCenter.x, 0, offsetToCenter.z ) );
 
 	        Vector3 relativeOffset = Vector3.forward * distance + Vector3.down * height;
-	        cameraTransform.rotation = yRotation * Quaternion.LookRotation( relativeOffset );
+		cameraTransform.rotation = Quaternion.identity;//yRotation * Quaternion.LookRotation( relativeOffset );
 
 	    }
 
