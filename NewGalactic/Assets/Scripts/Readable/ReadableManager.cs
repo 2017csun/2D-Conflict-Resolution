@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ReadableManager : MonoBehaviour {
+public class ReadableManager : Photon.PunBehaviour {
 	public bool shouldFirstPerson = true;
 	public Image arrowKey;
 	public Text mainText;

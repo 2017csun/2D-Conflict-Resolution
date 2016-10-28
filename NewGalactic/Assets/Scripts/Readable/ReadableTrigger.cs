@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ReadableTrigger : MonoBehaviour {
+public class ReadableTrigger : Photon.PunBehaviour {
 
 	[SerializeField] string stringToShow;
 	[SerializeField] string firstPersonString;
@@ -20,8 +20,11 @@ public class ReadableTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
-		updateText ();
-		laserToStart.StartShrink ();
+		if (collider.gameObject.GetComponent<PlayerControl> ().thisOneIsLocal) {
+			updateText ();
+			laserToStart.StartShrink ();
+		}
+
 	}
 
 	public void updateText(){

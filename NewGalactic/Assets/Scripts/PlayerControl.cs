@@ -26,7 +26,7 @@ public class PlayerControl : Photon.PunBehaviour
     public static GameObject LocalPlayerInstance =null;
 	public static GameObject NonLocalPlayerInstance = null;
 
-
+	public bool thisOneIsLocal = false;
 
     void Awake()
 	{
@@ -36,6 +36,7 @@ public class PlayerControl : Photon.PunBehaviour
 				PlayerControl.LocalPlayerInstance = this.gameObject;
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;
+				thisOneIsLocal = true;
 			} else {
 				Destroy (gameObject);
 			}
@@ -44,6 +45,8 @@ public class PlayerControl : Photon.PunBehaviour
 				PlayerControl.NonLocalPlayerInstance = this.gameObject;
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;
+				thisOneIsLocal = false;
+
 			} else {
 				Destroy (gameObject);
 			}

@@ -27,11 +27,15 @@ public class DoorTransporter : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		canTransport = true;
+		if (other.gameObject.GetComponent<PlayerControl> ().thisOneIsLocal) {
+			canTransport = true;
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){
 
-		canTransport = false;
+		if (other.gameObject.GetComponent<PlayerControl> ().thisOneIsLocal) {
+			canTransport = false;
+		}	
 	}
 }
