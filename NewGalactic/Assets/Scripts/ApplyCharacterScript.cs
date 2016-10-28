@@ -68,12 +68,25 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 			stream.SendNext (GameObject.FindObjectOfType<CharManager>().greenChar1);
 			stream.SendNext (GameObject.FindObjectOfType<CharManager>().blueChar1);
 			stream.SendNext ((isReadyToNextLevel ? "true" : "false"));
+			stream.SendNext (GameObject.FindObjectOfType<ScoringManager> ().resolvedNumRound);
+			stream.SendNext (GameObject.FindObjectOfType<ScoringManager> ().unresolvedNumRound);
+
 		} else {
 			Debug.Log ("READING STREAM");
 			GameObject.FindObjectOfType<CharManager>().redChar2 = (float) stream.ReceiveNext();
 			GameObject.FindObjectOfType<CharManager>().greenChar2 = (float) stream.ReceiveNext();
 			GameObject.FindObjectOfType<CharManager>().blueChar2 = (float) stream.ReceiveNext();
 			otherPlayerIsReadyToNextLevel = (stream.ReceiveNext ().Equals("true") ? true : false);
+			int resolved = (int)stream.ReceiveNext();
+			int unresolved = (int)stream.ReceiveNext();
+
+			if (resolved > -49000000) {
+				GameObject.FindObjectOfType<ScoringManager> ().resolvedNumRound = resolved;
+			}
+			if (unresolved != -49000000) {
+				GameObject.FindObjectOfType<ScoringManager> ().unresolvedNumRound = unresolved;
+
+			}
 		}
 	}
 }
