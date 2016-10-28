@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DoorTransporter : MonoBehaviour {
 
@@ -18,6 +19,10 @@ public class DoorTransporter : MonoBehaviour {
 			ApplyCharacterScript.isReadyToNextLevel = true;
 	
 			if (ApplyCharacterScript.otherPlayerIsReadyToNextLevel) {
+				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
+				ApplyCharacterScript.isReadyToNextLevel = false;
+				lm.LoadScene (destination);
+			} else if (VotingEnable.isMaster && SceneManager.GetActiveScene ().buildIndex == 10) {
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;
 				lm.LoadScene (destination);
