@@ -31,8 +31,10 @@ public class DoorTransporter : MonoBehaviour {
 				lm.LoadScene (destination);
 			} else if (VotingEnable.isMaster && SceneManager.GetActiveScene ().buildIndex == 10) {
 				NumberDetector[] dets = GameObject.FindObjectsOfType<NumberDetector> ();
-				foreach (NumberDetector n in dets) {
-					n.CheckForNums ();
+				if (dets != null) {
+					foreach (NumberDetector n in dets) {
+						n.CheckForNums ();
+					}
 				}
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;

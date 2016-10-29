@@ -11,6 +11,7 @@ public class CharacterToggleScript : Photon.PunBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		index = 0;
 		GameObject.FindObjectOfType<CharManager> ().redChar1 = colors [index].r;
 		GameObject.FindObjectOfType<CharManager> ().greenChar1 = colors [index].g;
 		GameObject.FindObjectOfType<CharManager> ().blueChar1 = colors [index].b;
