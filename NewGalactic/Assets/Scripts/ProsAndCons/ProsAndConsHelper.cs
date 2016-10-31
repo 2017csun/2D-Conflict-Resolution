@@ -9,6 +9,8 @@ class ProsAndConsHelper : MonoBehaviour
 {
     private static int proCount = 0;
     private static int conCount = 0;
+    private static bool[] correctProIndeces;
+    private static bool[] correctConIndeces;
     static public void populateButtons(
         GameObject gameObject,
         string[] correctAnswers,
@@ -18,18 +20,27 @@ class ProsAndConsHelper : MonoBehaviour
     {
 
         bool[] indeces = generateIndeces();
+        if (isPro)
+        {
+            correctProIndeces = indeces;
+        } else
+        {
+            correctConIndeces = indeces;
+        }
         Button[] children = gameObject.GetComponentsInChildren<Button>();
         int buttonCounter = 0;
         int trueCounter = 0;
 
         System.Random random = new System.Random();
-        foreach (Button button in children)
+        for(int i = 0; i < children.Length; i++)
         {
+            Button button = children[i];
             Text text = button.GetComponentInChildren<Text>();
             if (indeces[buttonCounter] == true && trueCounter < 3)
             {
                 text.text = correctAnswers[trueCounter];
                 trueCounter++;
+                Debug.Log("correct answer at index " + i + ", text " + correctAnswers[trueCounter - 1]);
             }
             else
             {
@@ -47,8 +58,8 @@ class ProsAndConsHelper : MonoBehaviour
         //PSEUDO RANDOM PRO/CON POSITIONING GENERAtION
         for (int i = 0; i < 6; i++)
         {
-            int rnd = random.Next(0, 4);
-            if (rnd > 1)
+            int rnd = random.Next(0, 5);
+            if (rnd > 2)
             {
                 indeces[i] = false;
             }
@@ -85,11 +96,13 @@ class ProsAndConsHelper : MonoBehaviour
             if (isPro)
             {
                 proCount--;
-            } else
+            }
+            else
             {
                 conCount--;
             }
-        } else
+        }
+        else
         {
             if (isPro)
             {
@@ -98,7 +111,8 @@ class ProsAndConsHelper : MonoBehaviour
                     text.color = Color.blue;
                     proCount++;
                 }
-            } else
+            }
+            else
             {
                 if (conCount < 3)
                 {
@@ -106,6 +120,35 @@ class ProsAndConsHelper : MonoBehaviour
                     conCount++;
                 }
             }
+        }
+    }
+    static private void showAnswerForList(GameObject list, bool[] indeces)
+    {
+        Button[] buttons = list.GetComponentsInChildren<Button>();
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            Text text = buttons[i].GetComponentInChildren<Text>();
+            if (indeces[i])
+            {
+                text.color = Color.green;
+            }
+            else if (text.color == Color.blue)
+            {
+                text.color = Color.red;
+            }
+            buttons[i].enabled = false;
+        }
+    }
+    static public void ShowAnswers(GameObject list, bool isPro)
+    {
+        
+        if (isPro)
+        {
+            showAnswerForList(list, correctProIndeces);
+        }
+        else
+        {
+            showAnswerForList(list, correctConIndeces);
         }
     }
 }

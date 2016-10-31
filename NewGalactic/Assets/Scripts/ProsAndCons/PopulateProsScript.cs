@@ -13,11 +13,6 @@ public class PopulateProsScript : MonoBehaviour {
         ProsAndConsHelper.populateButtons(gameObject, correctAnswers, wrongAnswers, true);
         
     }
-    void turnBlue()
-    {
-        Debug.Log("was clicked");
-        gameObject.GetComponent<Text>().color = Color.blue;
-    }
     // add logic for intentions here
     private string[] getWrongAnswers()
     {
