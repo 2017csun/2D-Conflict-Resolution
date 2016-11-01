@@ -96,7 +96,6 @@ public class Launcher : Photon.PunBehaviour
         }
         else
         {
-            //hostGameButton.SetActive (false);
             joinGameButton.SetActive(false);
             joinRoomNameInput.SetActive(true);
         }
