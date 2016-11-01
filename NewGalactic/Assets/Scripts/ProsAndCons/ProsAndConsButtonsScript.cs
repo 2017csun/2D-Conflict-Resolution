@@ -7,6 +7,8 @@ public class ProsAndConsButtonsScript : MonoBehaviour {
     GameObject prosList;
     GameObject consList;
     bool finished;
+
+	public Text intentionLabel;
 	// Use this for initialization
 	void Start () {
         finished = false;
@@ -14,6 +16,32 @@ public class ProsAndConsButtonsScript : MonoBehaviour {
 
         prosList = transform.Find("ProButtonList").gameObject;
         consList = transform.Find("ConButtonList").gameObject;
+
+		switch(GameObject.FindObjectOfType<GamePlanner>().currentIntention){
+		case 0: //compromising
+			intentionLabel.text = "Compromising";
+			break;
+		case 1: // competing
+			intentionLabel.text = "Competing";
+
+			break;
+		case 2: //collaborating
+			intentionLabel.text = "Collaborating";
+
+			break;
+		case 3: // avoiding
+			intentionLabel.text = "Avoiding";
+
+			break;
+		case 4: // accomodating
+			intentionLabel.text = "Accommodating";
+
+			break;
+		default:
+			intentionLabel.text = "Accommodating";
+
+			break;
+		}
         
 	}
 
@@ -22,7 +50,9 @@ public class ProsAndConsButtonsScript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Return) && finished)
         {
-            PhotonNetwork.LoadLevel("Scoring");
+			GameObject.FindObjectOfType<LevelManager>().CheckForOtherPlayer("Scoring");
+			//PhotonNetwork.LoadLevel("Scoring");
+
         }
     }
     public void Submit ()

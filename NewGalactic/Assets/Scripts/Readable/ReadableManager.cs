@@ -9,7 +9,7 @@ public class ReadableManager : Photon.PunBehaviour {
 	public ReadableTrigger currTrigger = null;
 	public Toggle firstp;
 
-
+	public Text textToMute;
 	// Use this for initialization
 	void Start () {
 
@@ -36,6 +36,9 @@ public class ReadableManager : Photon.PunBehaviour {
 	}
 
 	public void UpdateSimple(string simpleText){
+		if (textToMute != null) {
+			textToMute.gameObject.SetActive (false);
+		}
 		mainText.text = simpleText;
 	}
 		

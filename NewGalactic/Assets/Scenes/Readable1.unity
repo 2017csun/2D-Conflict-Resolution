@@ -402,15 +402,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02409f6c1f3b84b2e90cee92e7101822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringToShow: The new Lieutenant of Communications instructs the Lieutenant of Navigation
-    to inform the staff of the new meeting location change from conference room to
-    the flight deck. The Lieutenant of Navigation did not share the information with
-    everyone.
-  firstPersonString: 'I instruct Lieutenant of Navigation to inform the staff of the
-    new meeting location change. We moved the meeting from the conference room to
-    the flight deck. '
   readableMan: {fileID: 1419634329}
   laserToStart: {fileID: 1835269353}
+  incompleteassignmentsStringp1: 'Two weeks ago, I ask Cadet to prepare a report on
+    the number of enemy invasions. I plan to share the report at the next quarterly
+    intergalactic meeting. '
+  meetingmiscommuncationStringp1: 'I instruct Lieutenant of Navigation to inform the
+    staff of the new meeting location change. We moved the meeting from the conference
+    room to the flight deck. '
+  designdeploymentdelegationStringp1: I am in charge of the new satellite design and
+    deployment project. I am working with Ensign from Weapons who has the expertise
+    on satellite design but no experience in the field of satellite deployment.
+  passoverforpromotionStringp1: I encourage Chief Officer to apply for the First Officer
+    position of the ship. It would be a great promotion and I know Chief Officer meets
+    the requirements.
+  noshownocallStringp1: 'Staff Officer of Technology schedules the team of Staff Officers
+    to a meeting to finish the final presentation on the new communications software.
+    At an earlier meeting, we assigned the roles and responsibilities and established
+    deadlines. '
+  discussiondominationStringp1: 'During the last three team meetings to determine
+    the hiring priorities for medical staff, I have had a lot to say in the discussions '
+  incompleteassignmentsStringp2: Two weeks ago, Captain asked me to prepare a report
+    on the number of enemy invasions. Captain plans to share the report at the quarterly
+    intergalactic meeting.
+  meetingmiscommuncationStringp2: The new Lieutenant of Communications instructs me
+    to inform the staff of the new meeting location change from the conference room
+    to the flight deck.
+  designdeploymentdelegationStringp2: 'I am working with Lieutenant Commander of Weapons
+    in charge of the new satellite design and deployment project. '
+  passoverforpromotionStringp2: The Captain encourages me to apply for the promotion
+    to First Officer of the ship
+  noshownocallStringp2: I am the project lead for a team of Staff Officers and we
+    scheduled a meeting to finish the final presentation on the new communications
+    software.
+  discussiondominationStringp2: I am a member of the hiring committee.
 --- !u!1 &165001063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,16 +3074,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02409f6c1f3b84b2e90cee92e7101822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringToShow: "Some people show up at the conference room for the meeting and some
-    show up on the flight deck. After the initial confusion, the meeting occurs on
-    the flight deck. This isn\u2019t the first time the Lieutenant of Navigation has
-    made this mistake."
-  firstPersonString: Evidently, the Lieutenant of Navigation did not share the information
-    with everyone because some people show up at the conference room for the meeting
-    and some show up on the flight deck. After a delay from initial confusion, we
-    have the meeting on the flight deck.
   readableMan: {fileID: 1419634329}
   laserToStart: {fileID: 1332217954}
+  incompleteassignmentsStringp1: 'An hour before the meeting, I ask Cadet for the
+    report. Cadet tells me there is no report to give me. '
+  meetingmiscommuncationStringp1: Evidently, the Lieutenant of Navigation did not
+    share the information with everyone because some people show up at the conference
+    room for the meeting and some show up on the flight deck.
+  designdeploymentdelegationStringp1: Ensign constantly challenges me and my design
+    plans. I have been patient up to a point, but at the last meeting, I let out my
+    anger and frustration and shut down the Ensign in front of the whole team.
+  passoverforpromotionStringp1: Over dinner, Chief Officer informs me the application
+    was submitted according to protocol.  I reassure Chief Officer the promotion belongs
+    to the Chief Officer.
+  noshownocallStringp1: "We all agreed and committed to the plan. I did not attend
+    the next scheduled meeting. I also did not tell others I wasn\u2019t going to
+    be there and I did not submit my materials for the presentation to the meeting."
+  discussiondominationStringp1: I share my honest opinions with the team and people
+    seem annoyed when I speak.
+  incompleteassignmentsStringp2: I procrastinate doing the work and plan to complete
+    the report the morning of the meeting.
+  meetingmiscommuncationStringp2: I guess I did not share the information with everyone
+    because some people show up at the conference room for the meeting and some show
+    up on the flight deck. After the initial confusion, the meeting occurs on the
+    flight deck.
+  designdeploymentdelegationStringp2: 'I think it bothers Lieutenant Commander that
+    I have the expertise on satellite design but no experience in the field of satellite
+    deployment. '
+  passoverforpromotionStringp2: "I meets the position\u2019s requirements and submit
+    the application according to protocol. Over dinner, the Captain reassures me the
+    promotion belongs to me."
+  noshownocallStringp2: At an earlier meeting, we assigned the roles and responsibilities
+    and established deadlines. Everyone agreed and committed to the plan. On the day
+    of the meeting, the Staff Officer of Communications is a no show.
+  discussiondominationStringp2: "I have noticed that during the last three team meetings
+    to determine the hiring priorities for medical staff, the Physician\u2019s Assistant
+    talks too much and tends to dominate the discussion which impedes the efficiency
+    of the discussion. "
 --- !u!1 &747840968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3228,10 +3280,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02409f6c1f3b84b2e90cee92e7101822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringToShow: How will the Lieutenant of Navigation respond?
-  firstPersonString: How can I expect the Lieutenant of Navigation to respond?
   readableMan: {fileID: 1419634329}
   laserToStart: {fileID: 1459835358}
+  incompleteassignmentsStringp1: What am I to do with Cadet?
+  meetingmiscommuncationStringp1: What should I say? How can I expect the Lieutenant
+    of Navigation to respond?
+  designdeploymentdelegationStringp1: What can I expect to say Ensign to say to me
+    in light of my actions at the meeting?
+  passoverforpromotionStringp1: How can I to make things right?
+  noshownocallStringp1: How will Staff Officer of Technology guide and direct the
+    conversation?
+  discussiondominationStringp1: What will the Lead Nurse say?
+  incompleteassignmentsStringp2: Captain wants to meet with me after the meeting.  How
+    should I respond when I meet with Captain?
+  meetingmiscommuncationStringp2: How will I respond?
+  designdeploymentdelegationStringp2: What is the best way I should respond to the
+    Lieutenant Commander in light of the Lieutenant Commander actions at the meeting?
+  passoverforpromotionStringp2: What can I expect from the Captain to make things
+    right?
+  noshownocallStringp2: How will I guide and direct the conversation?
+  discussiondominationStringp2: "What will the outcome be for the Physician\u2019s
+    Assistant?"
 --- !u!1001 &792643083
 Prefab:
   m_ObjectHideFlags: 0
@@ -3424,13 +3493,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02409f6c1f3b84b2e90cee92e7101822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringToShow: After the meeting, the Lieutenant of Communications schedules a meeting
-    with the Lieutenant of Navigation to resolve the miscommunication issue.
-  firstPersonString: "This isn\u2019t the first time Lieutenant of Navigation has
-    made this mistake. After the meeting, I schedule a meeting with the Lieutenant
-    of Navigation to resolve the miscommunication issue."
   readableMan: {fileID: 1419634329}
   laserToStart: {fileID: 1501681287}
+  incompleteassignmentsStringp1: "Cadet explains that the computer system has failed
+    and is down for repairs and there is no way to print the report for today\u2019s
+    meeting."
+  meetingmiscommuncationStringp1: "After a delay from initial confusion, we have the
+    meeting on the flight deck. This isn\u2019t the first time Lieutenant of Navigation
+    has made this mistake."
+  designdeploymentdelegationStringp1: "Ensign sits in silence and quickly leaves at
+    the end of the meeting. I now realize I need Ensign\u2019s expertise for the project."
+  passoverforpromotionStringp1: A week later, Chief Officer confronts me in the transport
+    room and tells me about receiving a letter from Fleet Commander denying the promotion
+    application. The Chief Officer wants to meet with me in private.
+  noshownocallStringp1: "I can understand why Staff Officer of Technology is rightfully
+    upset with me since the presentation is fewer than six hours away. Staff Officer
+    of Technology tracks me down in the officers\u2019 quarters."
+  discussiondominationStringp1: I can tell by the way people roll their eyes and sigh
+    when I start to make a comment.
+  incompleteassignmentsStringp2: When I report to work today, there is a system failure
+    with the computer and the system will be down all day for repairs.
+  meetingmiscommuncationStringp2: "I admit this isn\u2019t the first time I have made
+    this mistake. After the meeting, the Lieutenant of Communications schedules a
+    meeting with me to resolve the miscommunication issue."
+  designdeploymentdelegationStringp2: "I see the project from a different perspective
+    and constantly challenge Lieutenant Commander\u2019s design plans. At the last
+    meeting, Lieutenant Commander erupts out of anger and frustration and shuts me
+    down in front of the whole team."
+  passoverforpromotionStringp2: A week later, I receive a letter from Fleet Commander
+    denying my application. I confront the Captain in the transport room and request
+    to meet in private.
+  noshownocallStringp2: "There is no notice and no materials are submitted for the
+    meeting. I have every right to be upset since the presentation is fewer than six
+    hours away. I track down the Staff Officer of Communications in the officers\u2019
+    quarters. "
+  discussiondominationStringp2: "Team members are frustrated with the Physician\u2019s
+    Assistant. They delegate me the responsibility to speak with the Physician\u2019s
+    Assistant about the productivity of the next meeting."
 --- !u!1 &829507609
 GameObject:
   m_ObjectHideFlags: 0
@@ -8581,7 +8680,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02409f6c1f3b84b2e90cee92e7101822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringToShow: What will the Lieutenant of Communications say?
-  firstPersonString: 'What should I say? '
   readableMan: {fileID: 1419634329}
   laserToStart: {fileID: 760420931}
+  incompleteassignmentsStringp1: What am I to do for my meeting?
+  meetingmiscommuncationStringp1: After the meeting, I schedule a meeting with the
+    Lieutenant of Navigation to resolve the miscommunication issue.
+  designdeploymentdelegationStringp1: 'How will I resolve the situation? '
+  passoverforpromotionStringp1: What can I expect the Chief Officer say?
+  noshownocallStringp1: 'How should I respond to not showing up to the meeting? '
+  discussiondominationStringp1: The Lead Nurse wants to talk to me about the productivity
+    of the next meeting.
+  incompleteassignmentsStringp2: 'When Captain asks for the report for the meeting
+    that will occur in an hour, I tell the Captain I do not have the report because
+    the computer system is down. '
+  meetingmiscommuncationStringp2: What can I expect the Lieutenant of Communications
+    say?
+  designdeploymentdelegationStringp2: For the rest of the meeting, I sit in silence
+    and quickly leave at the end of the meeting.  Later Lieutenant Commander calls
+    to meet with me. I think Lieutenant Commander realizes my expertise is needed
+    for the project.
+  passoverforpromotionStringp2: How should I respond to the Captain?
+  noshownocallStringp2: How will the Staff Officer of Communications respond to me
+    for not showing up to the meeting?
+  discussiondominationStringp2: 'How with the Lead Nurse handle the situation? '

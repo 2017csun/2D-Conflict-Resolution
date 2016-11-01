@@ -11,6 +11,8 @@ class ProsAndConsHelper : MonoBehaviour
     private static int conCount = 0;
     private static bool[] correctProIndeces;
     private static bool[] correctConIndeces;
+
+
     static public void populateButtons(
         GameObject gameObject,
         string[] correctAnswers,
@@ -23,9 +25,11 @@ class ProsAndConsHelper : MonoBehaviour
         if (isPro)
         {
             correctProIndeces = indeces;
+			proCount = 0;
         } else
         {
             correctConIndeces = indeces;
+			conCount = 0;
         }
         Button[] children = gameObject.GetComponentsInChildren<Button>();
         int buttonCounter = 0;
@@ -48,6 +52,13 @@ class ProsAndConsHelper : MonoBehaviour
             }
             button.onClick.AddListener(() => turnBlue(text, isPro));
         }
+		Button[] buttons = gameObject.GetComponentsInChildren<Button>();
+		for (int i = 0; i < buttons.Length; i++) {
+			buttons [i].enabled = true;
+			buttons[i].GetComponentInChildren<Text>().color = Color.black;
+
+
+		}
     }
     static public bool[] generateIndeces()
     {
@@ -134,33 +145,47 @@ class ProsAndConsHelper : MonoBehaviour
             }
         }
     }
-    static private void showAnswerForList(GameObject list, bool[] indeces)
+	static private void showAnswerForList(GameObject list, bool[] indeces, bool isPro)
     {
+		int correct = 0;
+		int incorrect = 0;
         Button[] buttons = list.GetComponentsInChildren<Button>();
         for (int i = 0; i < buttons.Length; i++)
         {
             Text text = buttons[i].GetComponentInChildren<Text>();
             if (indeces[i])
             {
-                text.color = Color.green;
+				if (text.color == Color.blue) {
+					correct++;
+				}
+				text.color = new Color(0f,.5f, 0f);
             }
             else if (text.color == Color.blue)
             {
+				incorrect++;
                 text.color = Color.red;
             }
             buttons[i].enabled = false;
         }
+		if (isPro) {
+			GameObject.FindObjectOfType<ScoringManager>().SetProsCorrect(correct);
+			GameObject.FindObjectOfType<ScoringManager>().SetProsIncorrect(incorrect);
+		} else {
+			GameObject.FindObjectOfType<ScoringManager>().SetConsCorrect(correct);
+			GameObject.FindObjectOfType<ScoringManager>().SetConsIncorrect(incorrect);
+		}
+
     }
     static public void ShowAnswers(GameObject list, bool isPro)
     {
         
         if (isPro)
         {
-            showAnswerForList(list, correctProIndeces);
+			showAnswerForList(list, correctProIndeces, isPro);
         }
         else
         {
-            showAnswerForList(list, correctConIndeces);
+			showAnswerForList(list, correctConIndeces, isPro);
         }
     }
 }
