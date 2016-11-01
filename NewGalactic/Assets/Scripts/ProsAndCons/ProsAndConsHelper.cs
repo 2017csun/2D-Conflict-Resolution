@@ -40,7 +40,6 @@ class ProsAndConsHelper : MonoBehaviour
             {
                 text.text = correctAnswers[trueCounter];
                 trueCounter++;
-                Debug.Log("correct answer at index " + i + ", text " + correctAnswers[trueCounter - 1]);
             }
             else
             {
@@ -103,8 +102,6 @@ class ProsAndConsHelper : MonoBehaviour
     }
     static void turnBlue(Text text, bool isPro)
     {
-        Debug.Log(isPro);
-        Debug.Log(conCount);
         if (text.color == Color.blue)
         {
             text.color = Color.black;
