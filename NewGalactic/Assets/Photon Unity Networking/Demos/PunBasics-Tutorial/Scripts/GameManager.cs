@@ -23,6 +23,8 @@ namespace ExitGames.Demos.DemoAnimator
 	/// Deals with level loading (outside the in room synchronization)
 	/// </summary>
 	public class GameManager : Photon.MonoBehaviour {
+		public GameObject camPrefab;
+
 
 		#region Public Variables
 
@@ -68,6 +70,13 @@ namespace ExitGames.Demos.DemoAnimator
 
 					// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
 					PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,5f,0f), Quaternion.identity, 0);
+					GameObject camera = Instantiate(camPrefab) as GameObject;
+					Transform sdn = camera.transform;
+					Debug.Log ("CAMERA TRANSFORM IS " + sdn);
+					if (camera != null)
+					{
+						GameObject.FindObjectOfType<CameraWork> ().cameraTransform = camera.transform;
+					}
 				}else{
 
 					Debug.Log("Ignoring scene load for "+ SceneManagerHelper.ActiveSceneName);

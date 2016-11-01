@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class LevelManager : Photon.PunBehaviour {
 
@@ -12,6 +13,28 @@ public class LevelManager : Photon.PunBehaviour {
     public void LoadScene(string sceneName)
     {
         this.photonView.RPC("LoadSceneRPC", PhotonTargets.MasterClient, sceneName);
+		/*if (PhotonNetwork.isNonMasterClientInRoom) {
+			Hashtable someCustomPropertiesToSet = new Hashtable () { { "isp1", "true" } };
+			PhotonNetwork.player.SetCustomProperties (someCustomPropertiesToSet);
+		} else {
+			Hashtable someCustomPropertiesToSet = new Hashtable () { { "isp1", "false" } };
+			PhotonNetwork.player.SetCustomProperties (someCustomPropertiesToSet);
+		}*/
+
+
+
+		PhotonPlayer[] players = PhotonNetwork.playerList;
+		foreach(PhotonPlayer p in players){
+			if (p.isLocal) {
+				Hashtable someCustomPropertiesToSet = new Hashtable () { { "isp1", "true" } };
+				PhotonNetwork.player.SetCustomProperties (someCustomPropertiesToSet);
+			} else {
+				Hashtable someCustomPropertiesToSet = new Hashtable () { { "isp1", "false" } };
+				PhotonNetwork.player.SetCustomProperties (someCustomPropertiesToSet);
+			}
+		}
+		ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
+		ApplyCharacterScript.isReadyToNextLevel = false;
     }
 
 
@@ -23,7 +46,7 @@ public class LevelManager : Photon.PunBehaviour {
 	}
 
     [PunRPC]
-    void LoadSceneRPC(string sceneName)
+    public void LoadSceneRPC(string sceneName)
     {
         PhotonNetwork.LoadLevel(sceneName);
     }

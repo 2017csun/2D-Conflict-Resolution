@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 475422}
   - 212: {fileID: 21217902}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Teleporter_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,9 +27,9 @@ GameObject:
   - 95: {fileID: 9580948}
   - 61: {fileID: 61000012698150162}
   - 114: {fileID: 114000013121055408}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Teleporter
-  m_TagString: Untagged
+  m_TagString: Teleporter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 445412}
   - 212: {fileID: 21292716}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Teleporter_Bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 455224}
   - 212: {fileID: 21243136}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Teleporter_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}

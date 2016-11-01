@@ -55,8 +55,6 @@ public class Launcher : Photon.PunBehaviour
 	public void Connect() {
         isConnecting = true;
         ShowLoading();
-
-        // #Critical, we must first and foremost connect to Photon Online Server.
         PhotonNetwork.ConnectUsingSettings(_gameVersion);
 	}
 
@@ -100,7 +98,9 @@ public class Launcher : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
-        PhotonNetwork.LoadLevel("Instructions");
+        //PhotonNetwork.LoadLevel("CharacterSelection");
+		((LevelManager)GameObject.FindObjectOfType<LevelManager>()).LoadScene("CharacterSelection");
+
     }
 
     public void OnPhotonJoinRoomFailed()
@@ -130,6 +130,8 @@ public class Launcher : Photon.PunBehaviour
 
             joinGameButton.SetActive(true);
             joinRoomNameInput.SetActive(false);
+
+            GameObject.FindObjectOfType<CharManager>().isChar1 = true;
         }
         else
         {
@@ -138,6 +140,8 @@ public class Launcher : Photon.PunBehaviour
 
             hostGameButton.SetActive(true);
             hostRoomNameInput.SetActive(false);
+
+            GameObject.FindObjectOfType<CharManager>().isChar1 = false;
         }
     }
 
