@@ -9,6 +9,9 @@ public class Launcher : Photon.PunBehaviour
 	public GameObject hostRoomNameInput;
 	public GameObject joinRoomNameInput;
     public GameObject loadingText;
+    public GameObject joinError;
+    public GameObject hostError;
+    public GameObject errorButton;
 
     string _gameVersion = "1";
     PhotonLogLevel Loglevel = PhotonLogLevel.Full;
@@ -39,21 +42,37 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     void Start()
     {
-		hostRoomNameInput.SetActive(false);
+        hostRoomNameInput.SetActive(false);
 		joinRoomNameInput.SetActive(false);
         loadingText.SetActive(false);
+        hostError.SetActive(false);
+        joinError.SetActive(false);
+        errorButton.SetActive(false);
 	}
     #endregion
 
     #region Public Methods
 	public void Connect() {
-        // #Critical, we must first and foremost connect to Photon Online Server.
-
-        HideAllButtonsAndShowConnecting();
-
         isConnecting = true;
-		PhotonNetwork.ConnectUsingSettings(_gameVersion);
+        ShowLoading();
+
+        // #Critical, we must first and foremost connect to Photon Online Server.
+        PhotonNetwork.ConnectUsingSettings(_gameVersion);
 	}
+
+    public void ResetAfterError()
+    {
+        isConnecting = false;
+
+        errorButton.SetActive(false);
+        hostError.SetActive(false);
+        joinError.SetActive(false);
+
+        hostGameButton.SetActive(true);
+        hostRoomNameInput.SetActive(false);
+        joinGameButton.SetActive(true);
+        joinRoomNameInput.SetActive(false);
+    }
 		
     public override void OnConnectedToMaster()
     {
@@ -71,7 +90,6 @@ public class Launcher : Photon.PunBehaviour
 				PhotonNetwork.JoinRoom (inputField.text);
 			}
 		}
-
     }
 
     public override void OnDisconnectedFromPhoton()
@@ -84,6 +102,22 @@ public class Launcher : Photon.PunBehaviour
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         PhotonNetwork.LoadLevel("Instructions");
     }
+
+    public void OnPhotonJoinRoomFailed()
+    {
+        loadingText.SetActive(false);
+        joinError.SetActive(true);
+        errorButton.SetActive(true);
+        PhotonNetwork.Disconnect();
+    }
+
+    public void OnPhotonCreateRoomFailed()
+    {
+        loadingText.SetActive(false);
+        hostError.SetActive(true);
+        errorButton.SetActive(true);
+        PhotonNetwork.Disconnect();
+    }
     #endregion
 
     private void OpenInputFields(bool host)
@@ -93,15 +127,22 @@ public class Launcher : Photon.PunBehaviour
         {
             hostGameButton.SetActive(false);
             hostRoomNameInput.SetActive(true);
+
+            joinGameButton.SetActive(true);
+            joinRoomNameInput.SetActive(false);
         }
         else
         {
             joinGameButton.SetActive(false);
             joinRoomNameInput.SetActive(true);
+
+            hostGameButton.SetActive(true);
+            hostRoomNameInput.SetActive(false);
         }
     }
 
-    private void HideAllButtonsAndShowConnecting() {
+    private void ShowLoading()
+    {
         hostGameButton.SetActive(false);
         hostRoomNameInput.SetActive(false);
         joinGameButton.SetActive(false);
