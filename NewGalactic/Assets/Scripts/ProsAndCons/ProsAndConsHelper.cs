@@ -36,7 +36,7 @@ class ProsAndConsHelper : MonoBehaviour
         {
             Button button = children[i];
             Text text = button.GetComponentInChildren<Text>();
-            if (indeces[buttonCounter] == true && trueCounter < 3)
+            if (indeces[i] == true && trueCounter < 3)
             {
                 text.text = correctAnswers[trueCounter];
                 trueCounter++;
@@ -58,7 +58,7 @@ class ProsAndConsHelper : MonoBehaviour
         //PSEUDO RANDOM PRO/CON POSITIONING GENERAtION
         for (int i = 0; i < 6; i++)
         {
-            int rnd = random.Next(0, 5);
+            int rnd = random.Next(6);
             if (rnd > 2)
             {
                 indeces[i] = false;
@@ -69,7 +69,7 @@ class ProsAndConsHelper : MonoBehaviour
                 numTrue++;
             }
         }
-        if (numTrue != 3)
+        if (numTrue < 3)
         {
             for (int i = 5; i >= 0; i--)
             {
@@ -77,6 +77,21 @@ class ProsAndConsHelper : MonoBehaviour
                 {
                     indeces[i] = true;
                     numTrue++;
+                    if (numTrue == 3)
+                    {
+                        i = -1;
+                    }
+                }
+            }
+        }
+        else if (numTrue > 3)
+        {
+            for (int i = 5; i >= 0; i--)
+            {
+                if (indeces[i] == true)
+                {
+                    indeces[i] = false;
+                    numTrue--;
                     if (numTrue == 3)
                     {
                         i = -1;
