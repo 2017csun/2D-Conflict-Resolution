@@ -8,6 +8,10 @@ public class Launcher : Photon.PunBehaviour
 	public GameObject joinGameButton;
 	public GameObject hostRoomNameInput;
 	public GameObject joinRoomNameInput;
+    public GameObject loadingText;
+    public GameObject joinError;
+    public GameObject hostError;
+    public GameObject errorButton;
 
     string _gameVersion = "1";
     PhotonLogLevel Loglevel = PhotonLogLevel.Full;
@@ -38,46 +42,39 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     void Start()
     {
-		hostRoomNameInput.SetActive(false);
+        hostRoomNameInput.SetActive(false);
 		joinRoomNameInput.SetActive(false);
+        loadingText.SetActive(false);
+        hostError.SetActive(false);
+        joinError.SetActive(false);
+        errorButton.SetActive(false);
 	}
     #endregion
 
     #region Public Methods
-
-	public void OpenInputFields(bool host) {
-		isHostPlayer = host;
-		if (isHostPlayer) {
-			hostGameButton.SetActive (false);
-			hostRoomNameInput.SetActive(true);
-			GameObject.FindObjectOfType<CharManager> ().isChar1 = true;
-		} else {
-			//hostGameButton.SetActive (false);
-			joinGameButton.SetActive(false);
-			joinRoomNameInput.SetActive(true);
-			GameObject.FindObjectOfType<CharManager> ().isChar1 = false;
-
-		}
-	}
-
 	public void Connect() {
-		// #Critical, we must first and foremost connect to Photon Online Server.
-		//isHostPlayer = host;
-		isConnecting = true;
-		PhotonNetwork.ConnectUsingSettings(_gameVersion);
+        isConnecting = true;
+        ShowLoading();
+        PhotonNetwork.ConnectUsingSettings(_gameVersion);
 	}
+
+    public void ResetAfterError()
+    {
+        isConnecting = false;
+
+        errorButton.SetActive(false);
+        hostError.SetActive(false);
+        joinError.SetActive(false);
+
+        hostGameButton.SetActive(true);
+        hostRoomNameInput.SetActive(false);
+        joinGameButton.SetActive(true);
+        joinRoomNameInput.SetActive(false);
+    }
 		
     public override void OnConnectedToMaster()
     {
         Debug.Log("DemoAnimator/Launcher: OnConnectedToMaster() was called by PUN");
-
-		/*
-		if (isConnecting)
-        {
-            // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnPhotonRandomJoinFailed()
-			PhotonNetwork.JoinRandomRoom();
-        }
-		*/
 
 		if (isConnecting)
 		{
@@ -91,23 +88,12 @@ public class Launcher : Photon.PunBehaviour
 				PhotonNetwork.JoinRoom (inputField.text);
 			}
 		}
-
     }
 
     public override void OnDisconnectedFromPhoton()
     {
         Debug.LogWarning("DemoAnimator/Launcher: OnDisconnectedFromPhoton() was called by PUN");
 	}
-
-	/*
-    public override void OnPhotonRandomJoinFailed(object[] codeAndMsg)
-    {
-        Debug.Log("DemoAnimator/Launcher:OnPhotonRandomJoinFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom(null, new RoomOptions() {maxPlayers = 2}, null);");
-
-        // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
-        PhotonNetwork.CreateRoom("roomname", new RoomOptions() { MaxPlayers = 2 }, null);
-    }
-    */
 
     public override void OnJoinedRoom()
     {
@@ -117,6 +103,55 @@ public class Launcher : Photon.PunBehaviour
 
     }
 
+    public void OnPhotonJoinRoomFailed()
+    {
+        loadingText.SetActive(false);
+        joinError.SetActive(true);
+        errorButton.SetActive(true);
+        PhotonNetwork.Disconnect();
+    }
+
+    public void OnPhotonCreateRoomFailed()
+    {
+        loadingText.SetActive(false);
+        hostError.SetActive(true);
+        errorButton.SetActive(true);
+        PhotonNetwork.Disconnect();
+    }
     #endregion
 
+    private void OpenInputFields(bool host)
+    {
+        isHostPlayer = host;
+        if (isHostPlayer)
+        {
+            hostGameButton.SetActive(false);
+            hostRoomNameInput.SetActive(true);
+
+            joinGameButton.SetActive(true);
+            joinRoomNameInput.SetActive(false);
+
+            GameObject.FindObjectOfType<CharManager>().isChar1 = true;
+        }
+        else
+        {
+            joinGameButton.SetActive(false);
+            joinRoomNameInput.SetActive(true);
+
+            hostGameButton.SetActive(true);
+            hostRoomNameInput.SetActive(false);
+
+            GameObject.FindObjectOfType<CharManager>().isChar1 = false;
+        }
+    }
+
+    private void ShowLoading()
+    {
+        hostGameButton.SetActive(false);
+        hostRoomNameInput.SetActive(false);
+        joinGameButton.SetActive(false);
+        joinRoomNameInput.SetActive(false);
+
+        loadingText.SetActive(true);
+    } 
 }
