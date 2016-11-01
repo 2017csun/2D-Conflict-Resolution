@@ -8,6 +8,7 @@ public class Launcher : Photon.PunBehaviour
 	public GameObject joinGameButton;
 	public GameObject hostRoomNameInput;
 	public GameObject joinRoomNameInput;
+    public GameObject loadingText;
 
     string _gameVersion = "1";
     PhotonLogLevel Loglevel = PhotonLogLevel.Full;
@@ -40,6 +41,7 @@ public class Launcher : Photon.PunBehaviour
     {
 		hostRoomNameInput.SetActive(false);
 		joinRoomNameInput.SetActive(false);
+        loadingText.SetActive(false);
 	}
     #endregion
 
@@ -105,5 +107,7 @@ public class Launcher : Photon.PunBehaviour
         hostRoomNameInput.SetActive(false);
         joinGameButton.SetActive(false);
         joinRoomNameInput.SetActive(false);
+
+        loadingText.SetActive(true);
     } 
 }
