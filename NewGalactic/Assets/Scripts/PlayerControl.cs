@@ -22,20 +22,21 @@ public class PlayerControl : Photon.PunBehaviour
 
 	public static bool dontScroll = false;
 
-    [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
-    public static GameObject LocalPlayerInstance =null;
+	[Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
+	public static GameObject LocalPlayerInstance =null;
 	public static GameObject NonLocalPlayerInstance = null;
 
 	public bool thisOneIsLocal = false;
 
-    void Awake()
+	void Awake()
 	{
-		
+
 		if (GetComponent<PhotonView> ().owner.isLocal) {
 			if (PlayerControl.LocalPlayerInstance == null) {
 				PlayerControl.LocalPlayerInstance = this.gameObject;
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;
+				GetComponentInChildren<SpriteRenderer> ().sortingOrder = 1; 
 				thisOneIsLocal = true;
 			} else {
 				Destroy (gameObject);
@@ -52,18 +53,18 @@ public class PlayerControl : Photon.PunBehaviour
 			}
 		}
 
-        // #Critical
-        // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
-        //DontDestroyOnLoad(this.gameObject);
+		// #Critical
+		// we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
+		//DontDestroyOnLoad(this.gameObject);
 
-        // Setting up references.
-        groundCheck = transform.Find("groundCheck");
+		// Setting up references.
+		groundCheck = transform.Find("groundCheck");
 	}
 
-    void Start()
-    {
+	void Start()
+	{
 		if (GetComponent<PhotonView> ().owner.isLocal) {
-			
+
 			CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork> ();
 
 			if (_cameraWork != null) {
@@ -74,13 +75,13 @@ public class PlayerControl : Photon.PunBehaviour
 				Debug.LogError ("<Color=Red>Missing</Color> CameraWork Component on playerPrefab.", this);
 			}
 		}
-    }
+	}
 
-    void Update()
+	void Update()
 	{
 		if (!ApplyCharacterScript.isReadyToNextLevel) {
 			if (GetComponent<PhotonView> ().owner.isLocal) {
-			
+
 				// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 				grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));  
 
@@ -102,7 +103,7 @@ public class PlayerControl : Photon.PunBehaviour
 	{
 		if (!ApplyCharacterScript.isReadyToNextLevel) {
 			if (GetComponent<PhotonView> ().owner.isLocal) {
-			
+
 				// Cache the horizontal input.
 				float h = Input.GetAxis ("Horizontal");
 				if (grounded) {
@@ -118,22 +119,22 @@ public class PlayerControl : Photon.PunBehaviour
 				}
 				// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 				if (h * GetComponent<Rigidbody2D> ().velocity.x < maxSpeed)
-			// ... add a force to the player.
-			GetComponent<Rigidbody2D> ().AddForce (Vector2.right * h * moveForce);
+					// ... add a force to the player.
+					GetComponent<Rigidbody2D> ().AddForce (Vector2.right * h * moveForce);
 
 				// If the player's horizontal velocity is greater than the maxSpeed...
 				if (Mathf.Abs (GetComponent<Rigidbody2D> ().velocity.x) > maxSpeed)
-			// ... set the player's velocity to the maxSpeed in the x axis.
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (Mathf.Sign (GetComponent<Rigidbody2D> ().velocity.x) * maxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+					// ... set the player's velocity to the maxSpeed in the x axis.
+					GetComponent<Rigidbody2D> ().velocity = new Vector2 (Mathf.Sign (GetComponent<Rigidbody2D> ().velocity.x) * maxSpeed, GetComponent<Rigidbody2D> ().velocity.y);
 
 				// If the input is moving the player right and the player is facing left...
 				if (h > 0 && !facingRight)
-			// ... flip the player.
-			Flip ();
-		// Otherwise if the input is moving the player left and the player is facing right...
-		else if (h < 0 && facingRight)
-			// ... flip the player.
-			Flip ();
+					// ... flip the player.
+					Flip ();
+				// Otherwise if the input is moving the player left and the player is facing right...
+				else if (h < 0 && facingRight)
+					// ... flip the player.
+					Flip ();
 
 				// If the player should jump...
 				if (jump) {
@@ -165,12 +166,12 @@ public class PlayerControl : Photon.PunBehaviour
 			GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 		}
 	}
-	
-	
+
+
 	void Flip ()
 	{
 		if (GetComponent<PhotonView> ().owner.isLocal) {
-			
+
 			// Switch the way the player is labelled as facing.
 			facingRight = !facingRight;
 
@@ -183,7 +184,7 @@ public class PlayerControl : Photon.PunBehaviour
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (GetComponent<PhotonView> ().owner.isLocal) {
-			
+
 			if (other.gameObject.CompareTag ("NoScrollZone")) {
 				dontScroll = true;
 			}
@@ -192,7 +193,7 @@ public class PlayerControl : Photon.PunBehaviour
 
 	void OnTriggerExit2D(Collider2D other){
 		if (GetComponent<PhotonView> ().owner.isLocal) {
-			
+
 			if (other.gameObject.CompareTag ("NoScrollZone")) {
 				dontScroll = false;
 			}
