@@ -27,13 +27,14 @@ public class GameManager : Photon.PunBehaviour
                 Debug.Log("We are Instantiating LocalPlayer from " + SceneManager.GetActiveScene().name);
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(-6f, 3f, 0f), Quaternion.identity, 0);
-				GameObject camera = Instantiate(camPrefab) as GameObject;
-				camera.transform.position = Vector2.zero;
-				Transform sdn = camera.transform;
-				Debug.Log ("CAMERA TRANSFORM IS " + sdn);
-				if (camera != null)
-				{
-					GameObject.FindObjectOfType<CameraWork> ().cameraTransform = camera.transform;
+				if (playerPrefab.GetComponent<PlayerControl> () != null) {
+					GameObject camera = Instantiate (camPrefab) as GameObject;
+					camera.transform.position = Vector2.zero;
+					Transform sdn = camera.transform;
+					Debug.Log ("CAMERA TRANSFORM IS " + sdn);
+					if (camera != null) {
+						GameObject.FindObjectOfType<CameraWork> ().cameraTransform = camera.transform;
+					}
 				}
             }
             else

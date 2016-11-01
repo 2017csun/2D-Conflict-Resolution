@@ -48,10 +48,15 @@ public class Launcher : Photon.PunBehaviour
 	public void OpenInputFields(bool host) {
 		isHostPlayer = host;
 		if (isHostPlayer) {
+			joinGameButton.SetActive(true);
+			joinRoomNameInput.SetActive(false);
+
 			hostGameButton.SetActive (false);
 			hostRoomNameInput.SetActive(true);
 			GameObject.FindObjectOfType<CharManager> ().isChar1 = true;
 		} else {
+			hostGameButton.SetActive (true);
+			hostRoomNameInput.SetActive(false);
 			//hostGameButton.SetActive (false);
 			joinGameButton.SetActive(false);
 			joinRoomNameInput.SetActive(true);
@@ -96,6 +101,10 @@ public class Launcher : Photon.PunBehaviour
 
     public override void OnDisconnectedFromPhoton()
     {
+		hostRoomNameInput.SetActive(false);
+		joinRoomNameInput.SetActive(false);
+		hostGameButton.SetActive (true);
+		joinGameButton.SetActive(true);
         Debug.LogWarning("DemoAnimator/Launcher: OnDisconnectedFromPhoton() was called by PUN");
 	}
 

@@ -51,4 +51,35 @@ public class LevelManager : Photon.PunBehaviour {
         PhotonNetwork.LoadLevel(sceneName);
     }
 
+	public void CheckForOtherPlayer(string sceneName){
+		if (ApplyCharacterScript.isReadyToNextLevel == false) {
+			ApplyCharacterScript.isReadyToNextLevel = true;
+
+		}
+
+		if (ApplyCharacterScript.otherPlayerIsReadyToNextLevel) {
+			/*NumberDetector[] dets = GameObject.FindObjectsOfType<NumberDetector> ();
+				if (dets != null) {
+					foreach (NumberDetector n in dets) {
+						n.CheckForNums ();
+					}
+				}*/
+
+			ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
+			ApplyCharacterScript.isReadyToNextLevel = false;
+
+			LoadScene (sceneName);
+		} else if (VotingEnable.isMaster && SceneManager.GetActiveScene ().buildIndex == 10) {
+			NumberDetector[] dets = GameObject.FindObjectsOfType<NumberDetector> ();
+			if (dets != null) {
+				foreach (NumberDetector n in dets) {
+					n.CheckForNums ();
+				}
+			}
+			ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
+			ApplyCharacterScript.isReadyToNextLevel = false;
+			LoadScene (sceneName);
+		}
+	}
+
 }

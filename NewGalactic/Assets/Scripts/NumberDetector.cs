@@ -35,11 +35,21 @@ public class NumberDetector : Photon.PunBehaviour {
 
 		fieldText.text = sNew;
 		this.GetComponent<InputField> ().text = sNew;
-		if(isResolved){
-			GameObject.FindObjectOfType<ScoringManager> ().SetResolvedNum (int.Parse (sNew));
-		} else {
-			GameObject.FindObjectOfType<ScoringManager> ().SetUnresolvedNum (int.Parse (sNew));
+		if (GetComponent<InputField> ().text.Length > 0) {
+			
+			if (isResolved) {
+				GameObject.FindObjectOfType<ScoringManager> ().SetResolvedNum (int.Parse (sNew));
+			} else {
+				GameObject.FindObjectOfType<ScoringManager> ().SetUnresolvedNum (int.Parse (sNew));
 
+			}
+		} else {
+			if (isResolved) {
+				GameObject.FindObjectOfType<ScoringManager> ().SetResolvedNum (0);
+			} else {
+				GameObject.FindObjectOfType<ScoringManager> ().SetUnresolvedNum (0);
+
+			}
 		}
 	}
 }

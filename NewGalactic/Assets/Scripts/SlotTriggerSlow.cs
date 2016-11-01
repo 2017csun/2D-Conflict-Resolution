@@ -19,13 +19,49 @@ public class SlotTriggerSlow : Photon.PunBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		if (!isConflict) {
 			if (collider.gameObject.GetComponent<PlayerControl> ().thisOneIsLocal) {
-				Debug.Log ("Setting trigger");
-				slotAnimator.SetTrigger ("SlowToAccommodating");
+				switch (GameObject.FindObjectOfType<GamePlanner> ().currentIntention) {
+				case 0:
+					slotAnimator.SetTrigger ("SlowToCompromising");
+					break;
+				case 1:
+					slotAnimator.SetTrigger ("SlowToCompeting");
+					break;
+				case 2:
+					slotAnimator.SetTrigger ("SlowToCollaborating");
+					break;
+				case 3:
+					slotAnimator.SetTrigger ("SlowToAvoiding");
+					break;
+				case 4:
+					slotAnimator.SetTrigger ("SlowToAccommodating");
+					break;
+				default:
+					slotAnimator.SetTrigger ("SlowToAccommodating");
+					break;
+				}
 			}
 		} else {
 			if (collider.gameObject.CompareTag ("Player")) {
-				Debug.Log ("Setting trigger");
-				slotAnimator.SetTrigger ("SlowToAccommodating");
+				switch (GameObject.FindObjectOfType<GamePlanner> ().currentConflict) {
+				case 0:
+					slotAnimator.SetTrigger ("SlowToCompromising");
+					break;
+				case 1:
+					slotAnimator.SetTrigger ("SlowToCompeting");
+					break;
+				case 2:
+					slotAnimator.SetTrigger ("SlowToCollaborating");
+					break;
+				case 3:
+					slotAnimator.SetTrigger ("SlowToAvoiding");
+					break;
+				case 4:
+					slotAnimator.SetTrigger ("SlowToAccommodating");
+					break;
+				default:
+					slotAnimator.SetTrigger ("SlowToAccommodating");
+					break;
+				}
 			}
 		}
 	}

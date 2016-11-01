@@ -14,7 +14,7 @@ public class PrintScore : Photon.PunBehaviour {
 			"\n   Number of Pros/Cons correct: " + sm.GetProsConsCorrectRound () +
 			"\n - Number of Pros/Cons incorrect: " + sm.GetProsConsIncorrectRound () +
 			"\n_________________" +
-			"\nTotal: " + (sm.GetResolvedNumRound () - sm.GetUnresolvedNumRound () + sm.GetProsConsCorrectRound() - sm.GetProsConsIncorrectRound () +
+			"\nTotal Round Score: " + (sm.GetResolvedNumRound () - sm.GetUnresolvedNumRound () + sm.GetProsConsCorrectRound() - sm.GetProsConsIncorrectRound () +
 			"\n\n\n\n Total Team Score: " + (sm.GetResolvedNumTeam() - sm.GetUnresolvedNumTeam() + sm.GetProsConsCorrectTeam() - sm.GetProsConsIncorrectTeam()));
 	}
 

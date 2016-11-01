@@ -11,6 +11,10 @@ public class CharacterToggleScript : Photon.PunBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GameObject.FindObjectOfType<GamePlanner> ().currentRound += 1;
+		if(PhotonNetwork.player.isMasterClient){
+			GameObject.FindObjectOfType<GamePlanner> ().RefreshValue ();
+		}
 		index = 0;
 		GameObject.FindObjectOfType<CharManager> ().redChar1 = colors [index].r;
 		GameObject.FindObjectOfType<CharManager> ().greenChar1 = colors [index].g;
@@ -23,12 +27,15 @@ public class CharacterToggleScript : Photon.PunBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-				GameObject.FindObjectOfType<CharManager> ().redChar1 = colors [index].r;
-				GameObject.FindObjectOfType<CharManager> ().greenChar1 = colors [index].g;
-				GameObject.FindObjectOfType<CharManager> ().blueChar1 = colors [index].b;
+			CharManager cm = GameObject.FindObjectOfType<CharManager> ();
+				cm.redChar1 = colors [index].r;
+				cm.greenChar1 = colors [index].g;
+				cm.blueChar1 = colors [index].b;
 
             //SceneManager.LoadScene("Instructions");
-			((LevelManager)GameObject.FindObjectOfType<LevelManager>()).LoadScene("Instructions");
+			if (!(cm.redChar1 == cm.redChar2 && cm.greenChar1 == cm.greenChar2 && cm.blueChar1 == cm.blueChar2)) {
+				GameObject.FindObjectOfType<LevelManager> ().CheckForOtherPlayer ("Instructions");
+			}
         }
 	    else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {

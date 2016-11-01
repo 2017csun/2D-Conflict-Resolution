@@ -16,15 +16,14 @@ public class DoorTransporter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (canTransport && Input.GetKey (KeyCode.DownArrow)) {
-			ApplyCharacterScript.isReadyToNextLevel = true;
-	
-			if (ApplyCharacterScript.otherPlayerIsReadyToNextLevel) {
+			lm.CheckForOtherPlayer (destination);
+			/*if (ApplyCharacterScript.otherPlayerIsReadyToNextLevel) {
 				/*NumberDetector[] dets = GameObject.FindObjectsOfType<NumberDetector> ();
 				if (dets != null) {
 					foreach (NumberDetector n in dets) {
 						n.CheckForNums ();
 					}
-				}*/
+				}
 
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;
@@ -39,7 +38,7 @@ public class DoorTransporter : MonoBehaviour {
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;
 				lm.LoadScene (destination);
-			}
+			}*/
 			//lm.LoadScene (destination);
 		}
 	}

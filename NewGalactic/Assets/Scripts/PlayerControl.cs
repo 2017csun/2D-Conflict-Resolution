@@ -36,6 +36,7 @@ public class PlayerControl : Photon.PunBehaviour
 				PlayerControl.LocalPlayerInstance = this.gameObject;
 				ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 				ApplyCharacterScript.isReadyToNextLevel = false;
+				GetComponentInChildren<SpriteRenderer> ().sortingOrder = 1; 
 				thisOneIsLocal = true;
 			} else {
 				Destroy (gameObject);
