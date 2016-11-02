@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d369a41b6264803b1a78b05de01638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 12
+  timeLeft: 60
   bt: {fileID: 1445261871}
   textToCount: {fileID: 1445261873}
   transporter: {fileID: 1221669884}

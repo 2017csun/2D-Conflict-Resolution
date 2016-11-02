@@ -2465,6 +2465,21 @@ Prefab:
       propertyPath: m_Color.a
       value: 0.497
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013005723664, guid: a1a5cf74cb33ffb42a205cb47f5491a0,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013005723664, guid: a1a5cf74cb33ffb42a205cb47f5491a0,
+        type: 2}
+      propertyPath: m_Text
+      value: Exit Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013005723664, guid: a1a5cf74cb33ffb42a205cb47f5491a0,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1a5cf74cb33ffb42a205cb47f5491a0, type: 2}
   m_IsPrefabParent: 0
