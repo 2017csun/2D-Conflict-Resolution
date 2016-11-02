@@ -56,6 +56,6 @@ public class PrintScore : Photon.PunBehaviour {
 			"\n + Partner Score: " + sm.prosconsCorrectPartner +
 			"\n_________________" +
 			"\nTotal Round Score: " + (sm.GetProsConsCorrectRound () +
-				"\n\n\n\n Total Team Score: " + correctteam);
+				"\n\n\n\n\n\n Total Team Score: " + correctteam);
 	}
 }
