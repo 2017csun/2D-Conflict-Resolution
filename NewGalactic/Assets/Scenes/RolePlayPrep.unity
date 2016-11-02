@@ -879,6 +879,8 @@ MonoBehaviour:
   currTrigger: {fileID: 0}
   firstp: {fileID: 0}
   textToMute: {fileID: 451131858}
+  topText: {fileID: 0}
+  botText: {fileID: 0}
 --- !u!1001 &844860341
 Prefab:
   m_ObjectHideFlags: 0
@@ -1236,8 +1238,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 07968f29f724a4caba5fc90755cc0211, type: 3}
-    m_FontSize: 38
+    m_Font: {fileID: 12800000, guid: 47f1a172544a0994087934248f14b919, type: 3}
+    m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1536,7 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d369a41b6264803b1a78b05de01638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 10
+  timeLeft: 12
   bt: {fileID: 1445261871}
   textToCount: {fileID: 1445261873}
   transporter: {fileID: 1221669884}
@@ -1560,8 +1562,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 07968f29f724a4caba5fc90755cc0211, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 47f1a172544a0994087934248f14b919, type: 3}
+    m_FontSize: 54
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

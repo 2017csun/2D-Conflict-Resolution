@@ -8,10 +8,12 @@ public class ScoringManager : Photon.PunBehaviour {
 	int resolvedNumTeam = 0;
 	int unresolvedNumTeam = 0;
 
-	int prosconsCorrectRound = 0;
+	public int prosconsCorrectRound = 0;
 	int prosconsIncorrectRound = 0;
 	int prosconsCorrectTeam = 0;
 	int prosconsIncorrectTeam = 0;
+
+	public int prosconsCorrectPartner = 0;
 
 	void Awake(){
 		DontDestroyOnLoad (gameObject);
@@ -63,7 +65,7 @@ public class ScoringManager : Photon.PunBehaviour {
 	}
 
 	public int GetProsConsCorrectRound(){
-		return prosconsCorrectRound;
+		return prosconsCorrectRound + prosconsCorrectPartner;
 	}
 
 	public int GetProsConsIncorrectRound(){
@@ -81,7 +83,7 @@ public class ScoringManager : Photon.PunBehaviour {
 	}
 
 	public int GetProsConsCorrectTeam(){
-		prosconsCorrectTeam += prosconsCorrectRound;
+		prosconsCorrectTeam += GetProsConsCorrectRound();
 		return prosconsCorrectTeam;
 	}
 

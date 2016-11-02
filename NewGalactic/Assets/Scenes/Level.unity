@@ -1497,7 +1497,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -319.74, y: -239.28}
+  m_AnchoredPosition: {x: -319.8, y: -239.28}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &347942674
@@ -1532,7 +1532,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Conflict:'
+  m_Text: 'Your Scenario:'
 --- !u!222 &347942675
 CanvasRenderer:
   m_ObjectHideFlags: 0

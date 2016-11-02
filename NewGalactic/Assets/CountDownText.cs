@@ -14,8 +14,12 @@ public class CountDownText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		TimerStart ();
+		textToCount.text = "" + ((int)timeLeft/60).ToString("00") + ":" + (((int)timeLeft)%60).ToString("00");
 		transporter.SetActive (false);
-
+		/*bt.isAuto = false;
+		if (timeLeft < 10) {
+			bt.isAuto = true;
+		}*/
 	}
 	
 	// Update is called once per frame
@@ -24,17 +28,21 @@ public class CountDownText : MonoBehaviour {
 			secondCount += Time.deltaTime;
 
 			if (secondCount > 1f) {
-
-				bt.BlinkOff ();
+				if (timeLeft <= 10) {
+					bt.BlinkOff ();
+				}
 				timeLeft -= 1f;
-				textToCount.text = "00:0" + (int)timeLeft;
+				//textToCount.text = "00:0" + (int)timeLeft;
+				textToCount.text = "" + ((int)timeLeft/60).ToString("00") + ":" + (((int)timeLeft)%60).ToString("00");
 				secondCount = 0f;
 				if (timeLeft < 0f) {
 					shouldCountDown = false;
 					transporter.SetActive (true);
 				}
 			} else if (secondCount > .4f) {
-				bt.BlinkOn ();
+				if (timeLeft <= 10) {
+					bt.BlinkOn ();
+				}
 			}
 		}
 	}

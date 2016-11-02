@@ -84,6 +84,11 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 				stream.SendNext (0);
 				stream.SendNext (0);
 			}
+			if (GameObject.FindObjectOfType<ScoringManager> () != null) {
+				stream.SendNext (GameObject.FindObjectOfType<ScoringManager> ().prosconsCorrectRound);
+			} else {
+				stream.SendNext (0);
+			}
 		} else {
 			Debug.Log ("READING STREAM");
 			if (cm != null) {
@@ -99,7 +104,6 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 				}
 				if (unresolved != -49000000) {
 					GameObject.FindObjectOfType<ScoringManager> ().unresolvedNumRound = unresolved;
-
 				}
 			} else {
 				float temp = (float)stream.ReceiveNext ();
@@ -128,6 +132,11 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 			} else {
 				int temp = (int)stream.ReceiveNext ();
 				int temp2 = (int)stream.ReceiveNext ();
+			}
+			if (GameObject.FindObjectOfType<ScoringManager> () != null) {
+				GameObject.FindObjectOfType<ScoringManager> ().prosconsCorrectPartner = (int)stream.ReceiveNext ();
+			} else {
+				int temp = (int)stream.ReceiveNext ();
 			}
 		}
 	}

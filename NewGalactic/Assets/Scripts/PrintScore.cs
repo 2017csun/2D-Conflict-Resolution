@@ -4,23 +4,58 @@ using UnityEngine.UI;
 
 public class PrintScore : Photon.PunBehaviour {
 
+	bool hasPrintedScore = false;
+	int correctteam = 0;
+	bool oneMoreTime = false;
 	// Use this for initialization
 	void Start () {
-
-		ScoringManager sm = GameObject.FindObjectOfType<ScoringManager> ();
-		GetComponent<Text> ().text = "Score:\n" +
-			"   Number of resolved votes: " + sm.GetResolvedNumRound () +
-			"\n - Number of unresolved votes: " + sm.GetUnresolvedNumRound () +
-			"\n   Number of Pros/Cons correct: " + sm.GetProsConsCorrectRound () +
-			"\n - Number of Pros/Cons incorrect: " + sm.GetProsConsIncorrectRound () +
-			"\n_________________" +
-			"\nTotal Round Score: " + (sm.GetResolvedNumRound () - sm.GetUnresolvedNumRound () + sm.GetProsConsCorrectRound() - sm.GetProsConsIncorrectRound () +
-			"\n\n\n\n Total Team Score: " + (sm.GetResolvedNumTeam() - sm.GetUnresolvedNumTeam() + sm.GetProsConsCorrectTeam() - sm.GetProsConsIncorrectTeam()));
+		//Time.fixedDeltaTime = .1f;
+		StartCoroutine(UpdateScore());
 	}
 
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+		/*if (!hasPrintedScore) {
+			ScoringManager sm = GameObject.FindObjectOfType<ScoringManager> ();
+			//correctteam = (sm.GetProsConsCorrectTeam ());
+			GetComponent<Text> ().text = "Score:\n" +
+			"   Your Score: " + sm.prosconsCorrectRound +
+			"\n + Partner Score: " + sm.prosconsCorrectPartner +
+			"\n_________________" +
+			"\nTotal Round Score: " + (sm.GetProsConsCorrectRound () +
+			"\n\n\n\n\n\n\n\n Total Team Score: " + correctteam);
+			hasPrintedScore = true;
+		} else if (!oneMoreTime) {
+			ScoringManager sm = GameObject.FindObjectOfType<ScoringManager> ();
+			correctteam = (sm.GetProsConsCorrectTeam ());
+			GetComponent<Text> ().text = "Score:\n" +
+				"   Your Score: " + sm.prosconsCorrectRound +
+				"\n + Partner Score: " + sm.prosconsCorrectPartner +
+				"\n_________________" +
+				"\nTotal Round Score: " + (sm.GetProsConsCorrectRound () +
+					"\n\n\n\n\n\n\n\n Total Team Score: " + correctteam);
+			oneMoreTime = true;
+		} else {
+			ScoringManager sm = GameObject.FindObjectOfType<ScoringManager> ();
+			GetComponent<Text> ().text = "Score:\n" +
+				"   Your Score: " + sm.prosconsCorrectRound +
+				"\n + Partner Score: " + sm.prosconsCorrectPartner +
+				"\n_________________" +
+				"\nTotal Round Score: " + (sm.GetProsConsCorrectRound () +
+					"\n\n\n\n Total Team Score: " + correctteam);
+		}*/
+	}
 
+	IEnumerator UpdateScore(){
+		yield return new WaitForSeconds(.8f);
+		ScoringManager sm = GameObject.FindObjectOfType<ScoringManager> ();
+		correctteam = (sm.GetProsConsCorrectTeam ());
+		GetComponent<Text> ().text = "Score:\n" +
+			"   Your Score: " + sm.prosconsCorrectRound +
+			"\n + Partner Score: " + sm.prosconsCorrectPartner +
+			"\n_________________" +
+			"\nTotal Round Score: " + (sm.GetProsConsCorrectRound () +
+				"\n\n\n\n Total Team Score: " + correctteam);
 	}
 }
