@@ -58,8 +58,17 @@ public class SlotTriggerSlow : Photon.PunBehaviour {
 				case 4:
 					slotAnimator.SetTrigger ("SlowToAccommodating");
 					break;
+				case 5:
+					slotAnimator.SetTrigger ("SlowToPassed");
+					break;
+				case 6:
+					slotAnimator.SetTrigger ("SlowToUnresolved");
+					break;
+				case 7:
+					slotAnimator.SetTrigger ("SlowToConfidentiality");
+					break;
 				default:
-					slotAnimator.SetTrigger ("SlowToAccommodating");
+					slotAnimator.SetTrigger ("SlowToConfidentiality");
 					break;
 				}
 			}

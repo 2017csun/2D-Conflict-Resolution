@@ -72,7 +72,7 @@ public class GamePlanner : Photon.PunBehaviour {
 					intentionOrder[i] = intentionOrder[randomIndex];
 					intentionOrder[randomIndex] = temp;
 				}
-				currentConflict = conflictOrder [currentRound%5];
+				currentConflict = conflictOrder [currentRound%8];
 				currentIntention = intentionOrder [currentRound%5];
 				hasMadePlan = true;
 			} else if(PhotonNetwork.player.isMasterClient){
@@ -83,7 +83,7 @@ public class GamePlanner : Photon.PunBehaviour {
 	}
 
 	public void RefreshValue(){
-		currentConflict = conflictOrder [currentRound%5];
+		currentConflict = conflictOrder [currentRound%8];
 		currentIntention = intentionOrder [currentRound%5];
 	}
 }

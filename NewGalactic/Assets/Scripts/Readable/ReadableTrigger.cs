@@ -15,6 +15,8 @@ public class ReadableTrigger : Photon.PunBehaviour {
 	public string passoverforpromotionStringp1;
 	public string noshownocallStringp1;
 	public string discussiondominationStringp1;
+	public string unresolvedissuesStringp1;
+	public string confidentialitybreachStringp1;
 
 	public string incompleteassignmentsStringp2;
 	public string meetingmiscommuncationStringp2;
@@ -22,6 +24,8 @@ public class ReadableTrigger : Photon.PunBehaviour {
 	public string passoverforpromotionStringp2;
 	public string noshownocallStringp2;
 	public string discussiondominationStringp2;
+	public string unresolvedissuesStringp2;
+	public string confidentialitybreachStringp2;
 
 
 
@@ -89,11 +93,25 @@ public class ReadableTrigger : Photon.PunBehaviour {
 				s = noshownocallStringp2;
 			}
 			break;
-		default:
+		case 5:
 			if (PhotonNetwork.player.isMasterClient) {
 				s = passoverforpromotionStringp1;
 			} else {
 				s = passoverforpromotionStringp2;
+			}
+			break;
+		case 6:
+			if (PhotonNetwork.player.isMasterClient) {
+				s = unresolvedissuesStringp1;
+			} else {
+				s = unresolvedissuesStringp2;
+			}
+			break;
+		default:
+			if (PhotonNetwork.player.isMasterClient) {
+				s = confidentialitybreachStringp1;
+			} else {
+				s = confidentialitybreachStringp2;
 			}
 			break;
 		}

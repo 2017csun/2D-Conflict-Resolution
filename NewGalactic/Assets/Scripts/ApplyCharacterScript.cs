@@ -75,7 +75,7 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 			if (PhotonNetwork.player != null) {
 				if (PhotonNetwork.player.isMasterClient) {
 					stream.SendNext (GameObject.FindObjectOfType<GamePlanner> ().intentionOrder[(GameObject.FindObjectOfType<GamePlanner> ().currentRound + 2)% 5] );
-					stream.SendNext (GameObject.FindObjectOfType<GamePlanner> ().conflictOrder[GameObject.FindObjectOfType<GamePlanner> ().currentRound % 5] );
+					stream.SendNext (GameObject.FindObjectOfType<GamePlanner> ().conflictOrder[GameObject.FindObjectOfType<GamePlanner> ().currentRound % 8] );
 				} else {
 					stream.SendNext (0);
 					stream.SendNext (0);
@@ -86,6 +86,11 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 			}
 			if (GameObject.FindObjectOfType<ScoringManager> () != null) {
 				stream.SendNext (GameObject.FindObjectOfType<ScoringManager> ().prosconsCorrectRound);
+			} else {
+				stream.SendNext (0);
+			}
+			if (PlayerControl.LocalPlayerInstance.GetComponent<Rigidbody2D> ().velocity.x != 0) {
+				stream.SendNext (1);
 			} else {
 				stream.SendNext (0);
 			}
@@ -137,6 +142,13 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 				GameObject.FindObjectOfType<ScoringManager> ().prosconsCorrectPartner = (int)stream.ReceiveNext ();
 			} else {
 				int temp = (int)stream.ReceiveNext ();
+			}
+			int ismov = (int)stream.ReceiveNext ();
+			if (ismov == 1) {
+				PlayerControl.nonLocalIsMoving = true;
+			} else {
+				PlayerControl.nonLocalIsMoving = false;
+
 			}
 		}
 	}

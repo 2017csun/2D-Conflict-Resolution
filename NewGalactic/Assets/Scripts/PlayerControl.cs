@@ -5,9 +5,7 @@ using ExitGames.Demos.DemoAnimator;
 
 public class PlayerControl : Photon.PunBehaviour
 {
-	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
-	[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
 	private bool doublejump = false;
 
@@ -27,6 +25,8 @@ public class PlayerControl : Photon.PunBehaviour
 	public static GameObject NonLocalPlayerInstance = null;
 
 	public bool thisOneIsLocal = false;
+
+	public static bool nonLocalIsMoving = false;
 
 	void Awake()
 	{
@@ -98,11 +98,19 @@ public class PlayerControl : Photon.PunBehaviour
 		} else {
 			GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 		}
+
+		if (!thisOneIsLocal) {
+			if (nonLocalIsMoving) {
+				anim.SetFloat ("Speed", 1);
+
+			} else {
+				anim.SetFloat ("Speed", 0);
+			}
+		}
 	}
 	void FixedUpdate ()
 	{
-		if (!ApplyCharacterScript.isReadyToNextLevel) {
-			if (GetComponent<PhotonView> ().owner.isLocal) {
+		if (!ApplyCharacterScript.isReadyToNextLevel && GetComponent<PhotonView> ().owner.isLocal) {
 
 				// Cache the horizontal input.
 				float h = Input.GetAxis ("Horizontal");
@@ -161,7 +169,7 @@ public class PlayerControl : Photon.PunBehaviour
 						jump = false;
 					}
 				}
-			}
+
 		} else {
 			GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 		}

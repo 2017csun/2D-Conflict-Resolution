@@ -32,8 +32,7 @@ public class ReadableManager : Photon.PunBehaviour {
 				}
 				break;
 			case 1:
-				// NEEDS REPLACING - meeting miscommunication
-				// confidentiality breach
+				// meeting miscommunication
 				if (PhotonNetwork.player.isMasterClient) {
 					s = "Lieutenant of Communications";
 					p = "Lieutenant of Navigation";
@@ -45,8 +44,7 @@ public class ReadableManager : Photon.PunBehaviour {
 				}
 				break;
 			case 2:
-				// NEEDS REPLACING - designdeploydelegate
-				// unresolved issues
+				// designdeploydelegate
 				if (PhotonNetwork.player.isMasterClient) {
 					s = "Lieutenant Commander of Weapons";
 					p = "Ensign";
@@ -81,7 +79,8 @@ public class ReadableManager : Photon.PunBehaviour {
 
 				}
 				break;
-			default:
+			case 5:
+				// passed over for promotion
 				if (PhotonNetwork.player.isMasterClient) {
 					s = "Captain";
 					p = "Chief Officer";
@@ -89,6 +88,30 @@ public class ReadableManager : Photon.PunBehaviour {
 				} else {
 					s = "Chief Officer";
 					p = "Captain";
+
+				}
+				break;
+			case 6:
+				// unresolved issues
+				if (PhotonNetwork.player.isMasterClient) {
+					s = "Captain";
+					p = "Chief Officer";
+
+				} else {
+					s = "Chief Officer";
+					p = "Captain";
+
+				}
+				break;
+			default:
+				// confidentiality breach
+				if (PhotonNetwork.player.isMasterClient) {
+					s = "Lieutenant Commander";
+					p = "Fleet Commander";
+
+				} else {
+					s = "Fleet Commander";
+					p = "Lieutenant Commander";
 
 				}
 				break;

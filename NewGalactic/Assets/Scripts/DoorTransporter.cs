@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DoorTransporter : MonoBehaviour {
@@ -7,9 +8,11 @@ public class DoorTransporter : MonoBehaviour {
 	bool canTransport = false;
 	public LevelManager lm;
 	public string destination;
+	public Text waitingText;
 
 	// Use this for initialization
 	void Start () {
+		waitingText.color = new Color(1,1,1,0);
 
 	}
 
@@ -40,6 +43,14 @@ public class DoorTransporter : MonoBehaviour {
 				lm.LoadScene (destination);
 			}*/
 			//lm.LoadScene (destination);
+		}
+		if (ApplyCharacterScript.isReadyToNextLevel) {
+			Text[] ts = GameObject.FindObjectsOfType<Text> ();
+			foreach (Text t in ts) {
+				t.color = new Color(1,1,1,0);
+
+			}
+			waitingText.color = new Color(1,1,1,1);
 		}
 	}
 
