@@ -10,9 +10,10 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-namespace ExitGames.Demos.DemoAnimator
-{
+//namespace ExitGames.Demos.DemoAnimator
+//{
 	/// <summary>
 	/// Camera work. Follow a target
 	/// </summary>
@@ -36,15 +37,17 @@ namespace ExitGames.Demos.DemoAnimator
 		[Tooltip("Set this as false if a component of a prefab being instanciated by Photon Network, and manually call OnStartFollowing() when and if needed.")]
 		public bool followOnStart = false;
 
+		public Transform cameraTransform;
+
+
 		#endregion
 		
 		#region Private Properties
 
 		// cached transform of the target
-		Transform cameraTransform;
 
 		// maintain a flag internally to reconnect if target is lost or camera is switched
-		bool isFollowing;
+		bool isFollowing = false;
 
 		// Represents the current velocity, this value is modified by SmoothDamp() every time you call it.
 		private float heightVelocity = 0.0f;
@@ -62,7 +65,7 @@ namespace ExitGames.Demos.DemoAnimator
 		void Start()
 		{
 			// Start following the target if wanted.
-			if (followOnStart)
+		if (followOnStart && SceneManager.GetActiveScene().buildIndex == 3)
 			{
 				OnStartFollowing();
 			}
@@ -76,15 +79,19 @@ namespace ExitGames.Demos.DemoAnimator
 		{
 			// The transform target may not destroy on level load, 
 			// so we need to cover corner cases where the Main Camera is different everytime we load a new scene, and reconnect when that happens
-			if (cameraTransform == null && isFollowing)
+			if (cameraTransform == null && SceneManager.GetActiveScene().buildIndex == 3)
 			{
 				OnStartFollowing();
 			}
 
 			// only follow is explicitly declared
-			if (isFollowing) {
-				Apply ();
-			}
+		if (SceneManager.GetActiveScene ().buildIndex == 3) {
+			Apply ();
+		} else {
+			cameraTransform.position = new Vector3( 0f, 0f, cameraTransform.position.z );
+			cameraTransform.rotation = Quaternion.identity;//yRotation * Quaternion.LookRotation( relativeOffset );
+
+		}
 		}
 
 		#endregion
@@ -97,8 +104,8 @@ namespace ExitGames.Demos.DemoAnimator
 		/// </summary>
 		public void OnStartFollowing()
 		{	      
-			cameraTransform = Camera.main.transform;
-			isFollowing = true;
+			//cameraTransform = Camera.main.transform;
+			//isFollowing = true;
 			// we don't smooth anything, we go straight to the right camera shot
 			Cut();
 		}
@@ -138,10 +145,10 @@ namespace ExitGames.Demos.DemoAnimator
 	        cameraTransform.position += currentRotation * Vector3.back * distance;
 
 	        // Set the height of the camera
-	        cameraTransform.position = new Vector3( cameraTransform.position.x, currentHeight, cameraTransform.position.z );
+	        cameraTransform.position = new Vector3( cameraTransform.position.x, 0f, cameraTransform.position.z );
 
 	        // Always look at the target	
-	        SetUpRotation(targetCenter);
+	       SetUpRotation(targetCenter);
 	    }
 
 	   
@@ -171,10 +178,10 @@ namespace ExitGames.Demos.DemoAnimator
 	        Quaternion yRotation = Quaternion.LookRotation( new Vector3( offsetToCenter.x, 0, offsetToCenter.z ) );
 
 	        Vector3 relativeOffset = Vector3.forward * distance + Vector3.down * height;
-	        cameraTransform.rotation = yRotation * Quaternion.LookRotation( relativeOffset );
+		cameraTransform.rotation = Quaternion.identity;//yRotation * Quaternion.LookRotation( relativeOffset );
 
 	    }
 
 		#endregion
 	}
-}
+//}
