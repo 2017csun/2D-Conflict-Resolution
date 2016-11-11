@@ -14,8 +14,8 @@ public class ProsAndConsButtonsScript : MonoBehaviour {
         finished = false;
         gameObject.GetComponent<Button>().onClick.AddListener(()=>Submit());
 
-        prosList = transform.Find("ProButtonList").gameObject;
-        consList = transform.Find("ConButtonList").gameObject;
+        prosList = transform.Find("ProButtonList") ? transform.Find("ProButtonList").gameObject : null;
+        consList = transform.Find("ConButtonList") ? transform.Find("ConButtonList").gameObject : null;
 
 		switch(GameObject.FindObjectOfType<GamePlanner>().currentIntention){
 		case 0: //compromising
@@ -50,7 +50,14 @@ public class ProsAndConsButtonsScript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Return) && finished)
         {
-			GameObject.FindObjectOfType<LevelManager>().CheckForOtherPlayer("Scoring");
+            if (prosList != null)
+            {
+                GameObject.FindObjectOfType<LevelManager>().CheckForOtherPlayer("ConsScene");
+            }
+            else
+            {
+                GameObject.FindObjectOfType<LevelManager>().CheckForOtherPlayer("Scoring");
+            }
 			//PhotonNetwork.LoadLevel("Scoring");
 
         }
@@ -62,7 +69,13 @@ public class ProsAndConsButtonsScript : MonoBehaviour {
         button.enabled = false;
         button.GetComponentInChildren<Text>().text = "Press Enter to continue";
         
-        ProsAndConsHelper.ShowAnswers(prosList, true);
-        ProsAndConsHelper.ShowAnswers(consList, false);
+        if (prosList != null)
+        {
+            ProsAndConsHelper.ShowAnswers(prosList, true);
+        }
+        else
+        {
+            ProsAndConsHelper.ShowAnswers(consList, false);
+        }
     }
 }
