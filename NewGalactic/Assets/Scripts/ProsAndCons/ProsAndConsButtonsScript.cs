@@ -4,18 +4,26 @@ using System.Collections;
 
 public class ProsAndConsButtonsScript : MonoBehaviour {
 
-    GameObject prosList;
-    GameObject consList;
+    GameObject prosList = null;
+    GameObject consList = null;
     bool finished;
 
 	public Text intentionLabel;
+	public GameObject transporter;
+
+	public Button submitButton;
 	// Use this for initialization
 	void Start () {
-        finished = false;
-        gameObject.GetComponent<Button>().onClick.AddListener(()=>Submit());
+		Debug.Log ("Hello beginning!");
 
-        prosList = transform.Find("ProButtonList").gameObject;
-        consList = transform.Find("ConButtonList").gameObject;
+        finished = false;
+        //gameObject.GetComponent<Button>().onClick.AddListener(()=>Submit());
+
+		if (GameObject.Find ("ProButtonList") != null) {
+			prosList = GameObject.Find ("ProButtonList").gameObject;
+		} else if (GameObject.Find ("ConButtonList") != null) {
+			consList = GameObject.Find ("ConButtonList").gameObject;
+		}
 
 		switch(GameObject.FindObjectOfType<GamePlanner>().currentIntention){
 		case 0: //compromising
@@ -42,27 +50,35 @@ public class ProsAndConsButtonsScript : MonoBehaviour {
 
 			break;
 		}
+		Debug.Log ("Hello world!");
+		transporter.SetActive (false);
         
 	}
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && finished)
+       /* if (Input.GetKeyDown(KeyCode.Return) && finished)
         {
 			GameObject.FindObjectOfType<LevelManager>().CheckForOtherPlayer("Scoring");
 			//PhotonNetwork.LoadLevel("Scoring");
 
-        }
+        }*/
     }
     public void Submit ()
     {
         finished = true;
-        Button button = gameObject.GetComponent<Button>();
-        button.enabled = false;
-        button.GetComponentInChildren<Text>().text = "Press Enter to continue";
+       // Button button = gameObject.GetComponent<Button>();
+		submitButton.gameObject.SetActive(false);
+        //button.GetComponentInChildren<Text>().text = "Press Enter to continue";
         
-        ProsAndConsHelper.ShowAnswers(prosList, true);
-        ProsAndConsHelper.ShowAnswers(consList, false);
+		if (prosList != null) {
+			ProsAndConsHelper.ShowAnswers (prosList, true);
+		} 
+		if (consList != null) {
+			ProsAndConsHelper.ShowAnswers (consList, false);
+		}
+		transporter.SetActive (true);
+
     }
 }

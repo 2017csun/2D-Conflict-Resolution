@@ -15,6 +15,7 @@ TagManager:
   - HealthBar
   - NoScrollZone
   - Teleporter
+  - pcbutton
   layers:
   - Default
   - TransparentFX

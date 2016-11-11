@@ -9,7 +9,7 @@ public class DoorTransporter : MonoBehaviour {
 	public LevelManager lm;
 	public string destination;
 	public Text waitingText;
-
+	public bool isProsCons = false;
 	// Use this for initialization
 	void Start () {
 		waitingText.color = new Color(1,1,1,0);
@@ -51,6 +51,13 @@ public class DoorTransporter : MonoBehaviour {
 
 			}
 			waitingText.color = new Color(1,1,1,1);
+
+			if (isProsCons) {
+				GameObject[] imgs = GameObject.FindGameObjectsWithTag ("pcbutton");
+				foreach (GameObject i in imgs) {
+					i.SetActive (false);
+				}
+			}
 		}
 	}
 
