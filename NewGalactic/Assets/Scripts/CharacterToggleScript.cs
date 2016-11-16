@@ -11,10 +11,7 @@ public class CharacterToggleScript : Photon.PunBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject.FindObjectOfType<GamePlanner> ().currentRound += 1;
-		if(PhotonNetwork.player.isMasterClient){
-			GameObject.FindObjectOfType<GamePlanner> ().RefreshValue ();
-		}
+		
 		index = 0;
 		GameObject.FindObjectOfType<CharManager> ().redChar1 = colors [index].r;
 		GameObject.FindObjectOfType<CharManager> ().greenChar1 = colors [index].g;

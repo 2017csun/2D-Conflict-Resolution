@@ -11,6 +11,7 @@ public class GamePlanner : Photon.PunBehaviour {
 	public int currentRound = 0;
 	public int currentConflict = 0;
 	public int currentIntention = 0;
+	public int currentOtherPlayersIntention = 0;
 
 	public static GamePlanner instance = null;
 
@@ -74,6 +75,7 @@ public class GamePlanner : Photon.PunBehaviour {
 				}
 				currentConflict = conflictOrder [currentRound%8];
 				currentIntention = intentionOrder [currentRound%5];
+				currentOtherPlayersIntention = intentionOrder [(currentRound + 2) % 5];
 				hasMadePlan = true;
 			} else if(PhotonNetwork.player.isMasterClient){
 				//currentConflict = conflictOrder [currentRound%5];
@@ -84,6 +86,30 @@ public class GamePlanner : Photon.PunBehaviour {
 
 	public void RefreshValue(){
 		currentConflict = conflictOrder [currentRound%8];
+		currentOtherPlayersIntention = intentionOrder [(currentRound + 2) % 5];
 		currentIntention = intentionOrder [currentRound%5];
+	}
+
+	public string intentionToString(int intention){
+		switch (intention) {
+		case 0:
+			return "Compromising";
+			break;
+		case 1:
+			return "Competing";
+			break;
+		case 2:
+			return "Collaborating";
+			break;
+		case 3:
+			return "Avoiding";
+			break;
+		case 4:
+			return "Accommodating";
+			break;
+		default:
+			return "Accommodating";
+			break;
+		}
 	}
 }

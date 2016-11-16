@@ -21,7 +21,7 @@ public class ScoringManager : Photon.PunBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 
 	// Update is called once per frame

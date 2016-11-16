@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class CountDownText : MonoBehaviour {
+public class CountDownText : Photon.PunBehaviour {
 
 	public float timeLeft;
 	bool shouldCountDown = false;
@@ -36,8 +36,13 @@ public class CountDownText : MonoBehaviour {
 				textToCount.text = "" + ((int)timeLeft/60).ToString("00") + ":" + (((int)timeLeft)%60).ToString("00");
 				secondCount = 0f;
 				if (timeLeft < 0f) {
+					RolePlayText rpt = GameObject.FindObjectOfType<RolePlayText> ();
+					if (rpt != null) {
+						rpt.RevealIntentions ();
+					}
 					shouldCountDown = false;
 					transporter.SetActive (true);
+
 				}
 			} else if (secondCount > .4f) {
 				if (timeLeft <= 10) {

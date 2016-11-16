@@ -172,6 +172,7 @@ public class PlayerControl : Photon.PunBehaviour
 
 		} else {
 			GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
+			StopAnimate ();
 		}
 	}
 
@@ -206,5 +207,10 @@ public class PlayerControl : Photon.PunBehaviour
 				dontScroll = false;
 			}
 		}
+	}
+
+	public void StopAnimate(){
+		anim.SetFloat ("Speed", 0f);
+
 	}
 }

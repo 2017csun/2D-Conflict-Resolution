@@ -75,8 +75,10 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 			if (PhotonNetwork.player != null) {
 				if (PhotonNetwork.player.isMasterClient) {
 					stream.SendNext (GameObject.FindObjectOfType<GamePlanner> ().intentionOrder[(GameObject.FindObjectOfType<GamePlanner> ().currentRound + 2)% 5] );
+					stream.SendNext (GameObject.FindObjectOfType<GamePlanner> ().intentionOrder[(GameObject.FindObjectOfType<GamePlanner> ().currentRound)% 5] );
 					stream.SendNext (GameObject.FindObjectOfType<GamePlanner> ().conflictOrder[GameObject.FindObjectOfType<GamePlanner> ().currentRound % 8] );
 				} else {
+					stream.SendNext (0);
 					stream.SendNext (0);
 					stream.SendNext (0);
 				}
@@ -129,9 +131,11 @@ public class ApplyCharacterScript :  Photon.PunBehaviour {
 			if (PhotonNetwork.player != null) {
 				if (PhotonNetwork.player.isMasterClient) {
 					int temp = (int)stream.ReceiveNext ();
+					int temp3 = (int)stream.ReceiveNext ();
 					int temp2 = (int)stream.ReceiveNext ();
 				} else {
 					GameObject.FindObjectOfType<GamePlanner> ().currentIntention = (int)stream.ReceiveNext ();
+					GameObject.FindObjectOfType<GamePlanner> ().currentOtherPlayersIntention = (int)stream.ReceiveNext ();
 					GameObject.FindObjectOfType<GamePlanner> ().currentConflict = (int)stream.ReceiveNext ();
 				}
 			} else {

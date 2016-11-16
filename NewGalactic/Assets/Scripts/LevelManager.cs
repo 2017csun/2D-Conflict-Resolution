@@ -54,7 +54,6 @@ public class LevelManager : Photon.PunBehaviour {
 	public void CheckForOtherPlayer(string sceneName){
 		if (ApplyCharacterScript.isReadyToNextLevel == false) {
 			ApplyCharacterScript.isReadyToNextLevel = true;
-
 		}
 
 		if (ApplyCharacterScript.otherPlayerIsReadyToNextLevel) {

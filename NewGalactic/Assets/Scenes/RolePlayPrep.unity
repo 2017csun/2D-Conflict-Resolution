@@ -827,7 +827,7 @@ Canvas:
   m_GameObject: {fileID: 815899338}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1323,6 +1323,7 @@ GameObject:
   - 224: {fileID: 1292513972}
   - 222: {fileID: 1292513974}
   - 114: {fileID: 1292513973}
+  - 114: {fileID: 1292513975}
   m_Layer: 5
   m_Name: WaitingText
   m_TagString: Untagged
@@ -1345,7 +1346,7 @@ RectTransform:
   m_RootOrder: 11
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -186, y: -0.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292513973
@@ -1374,7 +1375,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 42
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -1387,6 +1388,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1292513971}
+--- !u!114 &1292513975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1292513971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c346383ffdc8454686a9a53443dc0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1327814712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,7 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d369a41b6264803b1a78b05de01638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 10
+  timeLeft: 60
   bt: {fileID: 1445261871}
   textToCount: {fileID: 1445261873}
   transporter: {fileID: 1221669884}

@@ -57,7 +57,7 @@ public class DoorTransporter : MonoBehaviour {
 				foreach (GameObject i in imgs) {
 					i.SetActive (false);
 				}
-			}
+			} 
 		}
 	}
 

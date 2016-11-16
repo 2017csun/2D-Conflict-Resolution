@@ -113,8 +113,11 @@ class ProsAndConsHelper : MonoBehaviour
     }
     static void turnBlue(Text text, bool isPro)
     {
+		Transform parent = text.transform.parent;
+		Toggle tog = parent.GetComponentInChildren<Toggle> ();
         if (text.color == Color.blue)
         {
+			tog.isOn = false;
             text.color = Color.black;
             if (isPro)
             {
@@ -131,6 +134,7 @@ class ProsAndConsHelper : MonoBehaviour
             {
                 if (proCount < 3)
                 {
+					tog.isOn = true;
                     text.color = Color.blue;
                     proCount++;
                 }
@@ -139,6 +143,7 @@ class ProsAndConsHelper : MonoBehaviour
             {
                 if (conCount < 3)
                 {
+					tog.isOn = true;
                     text.color = Color.blue;
                     conCount++;
                 }
