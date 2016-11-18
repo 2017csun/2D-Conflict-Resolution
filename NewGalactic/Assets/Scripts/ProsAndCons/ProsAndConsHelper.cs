@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
-class ProsAndConsHelper : MonoBehaviour
+class ProsAndConsHelper : Photon.PunBehaviour
 {
     private static int proCount = 0;
     private static int conCount = 0;
     private static bool[] correctProIndeces;
     private static bool[] correctConIndeces;
+
+	private static List<int> wrongIndexes = new List<int>();
 
 
     static public void populateButtons(
@@ -47,8 +50,12 @@ class ProsAndConsHelper : MonoBehaviour
             }
             else
             {
-                int index = (int)random.Next(0, wrongAnswers.Length - 1);
-                text.text = wrongAnswers[index];
+				int index;
+				do{
+					index = (int)random.Next(0, wrongAnswers.Length - 1);
+				} while (wrongIndexes.Contains(index));
+				wrongIndexes.Add (index);
+				text.text = wrongAnswers[index];
             }
             button.onClick.AddListener(() => turnBlue(text, isPro));
         }

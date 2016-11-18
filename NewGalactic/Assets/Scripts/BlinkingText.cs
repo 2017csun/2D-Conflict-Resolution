@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class BlinkingText : MonoBehaviour {
+public class BlinkingText : Photon.PunBehaviour {
 
 	bool isVis = true;
 	float elapsedTime = 0f;
@@ -31,14 +31,19 @@ public class BlinkingText : MonoBehaviour {
 	}
 
 	public void BlinkOff(){
-		textToBlink.color = new Color (1f, 1f, 1f, 0f);
-		isVis = false;
-		elapsedTime = 0f;
+		if (textToBlink != null) {
+			textToBlink.color = new Color (1f, 1f, 1f, 0f);
+			isVis = false;
+			elapsedTime = 0f;
+		}
 	}
 
 	public void BlinkOn(){
-		textToBlink.color = new Color (1f, 1f, 1f, 1f);
-		isVis = true;
-		elapsedTime = 0f;
+		if (textToBlink != null) {
+			
+			textToBlink.color = new Color (1f, 1f, 1f, 1f);
+			isVis = true;
+			elapsedTime = 0f;
+		}
 	}
 }

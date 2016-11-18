@@ -23,6 +23,8 @@ GameObject:
   - 124: {fileID: 124000013035020002}
   - 92: {fileID: 92000013856880478}
   - 81: {fileID: 81000010864781338}
+  - 114: {fileID: 114000011710635308}
+  - 114: {fileID: 114000010823369126}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -91,6 +93,34 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013950599132}
   m_Enabled: 1
+--- !u!114 &114000010823369126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013950599132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765704e7337404c15a69b79e445a94b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bo: {fileID: 114000011710635308}
+--- !u!114 &114000011710635308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013950599132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc6bde01469c7b4badee5362f191d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  downsample: 1
+  blurSize: 0
+  blurIterations: 2
+  blurType: 0
+  blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
 --- !u!124 &124000013035020002
 Behaviour:
   m_ObjectHideFlags: 1

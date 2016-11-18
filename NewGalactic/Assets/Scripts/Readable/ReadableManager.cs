@@ -15,7 +15,7 @@ public class ReadableManager : Photon.PunBehaviour {
 	public Text botText = null;
 	// Use this for initialization
 	void Start () {
-		if (topText != null) {
+		if (topText != null && botText != null) {
 			string s = "";
 			string p = "";
 			switch (GameObject.FindObjectOfType<GamePlanner> ().currentConflict) {
@@ -127,7 +127,9 @@ public class ReadableManager : Photon.PunBehaviour {
 	}
 
 	public void UpdateText(string newText, ReadableTrigger rt){
-		mainText.text = newText;
+		if (mainText != null) {
+			mainText.text = newText;
+		}
 		currTrigger = rt;
 
 	}
@@ -145,7 +147,9 @@ public class ReadableManager : Photon.PunBehaviour {
 		if (textToMute != null) {
 			textToMute.gameObject.SetActive (false);
 		}
-		mainText.text = simpleText;
+		if (mainText != null) {
+			mainText.text = simpleText;
+		}
 	}
 		
 }

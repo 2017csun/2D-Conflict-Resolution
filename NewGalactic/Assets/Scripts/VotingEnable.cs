@@ -9,10 +9,10 @@ public class VotingEnable : Photon.PunBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject.FindObjectOfType<GamePlanner> ().currentRound += 1;
+		/*GameObject.FindObjectOfType<GamePlanner> ().currentRound += 1;
 		if(PhotonNetwork.player.isMasterClient){
 			GameObject.FindObjectOfType<GamePlanner> ().RefreshValue ();
-		}
+		}*/
 
 
 

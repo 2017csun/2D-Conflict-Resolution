@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DoorTransporter : MonoBehaviour {
+public class DoorTransporter : Photon.PunBehaviour {
 
 	bool canTransport = false;
 	public LevelManager lm;
@@ -58,6 +58,13 @@ public class DoorTransporter : MonoBehaviour {
 					i.SetActive (false);
 				}
 			} 
+
+			if (SceneManager.GetActiveScene ().buildIndex == 7) {
+				Image[] images = GameObject.FindObjectsOfType<Image> ();
+				foreach (Image i in images) {
+					i.gameObject.SetActive (false);
+				}
+			}
 		}
 	}
 

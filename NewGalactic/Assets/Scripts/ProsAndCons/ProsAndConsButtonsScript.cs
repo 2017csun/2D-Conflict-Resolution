@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class ProsAndConsButtonsScript : MonoBehaviour {
+public class ProsAndConsButtonsScript : Photon.PunBehaviour {
 
     GameObject prosList = null;
     GameObject consList = null;
@@ -27,26 +27,26 @@ public class ProsAndConsButtonsScript : MonoBehaviour {
 
 		switch(GameObject.FindObjectOfType<GamePlanner>().currentIntention){
 		case 0: //compromising
-			intentionLabel.text = "Compromising";
+			intentionLabel.text = "C o m p r o m i s i n g";
 			break;
 		case 1: // competing
-			intentionLabel.text = "Competing";
+			intentionLabel.text = "C o m p e t i n g";
 
 			break;
 		case 2: //collaborating
-			intentionLabel.text = "Collaborating";
+			intentionLabel.text = "C o l l a b o r a t i n g";
 
 			break;
 		case 3: // avoiding
-			intentionLabel.text = "Avoiding";
+			intentionLabel.text = "A v o i d i n g";
 
 			break;
 		case 4: // accomodating
-			intentionLabel.text = "Accommodating";
+			intentionLabel.text = "A c c o m m o d a t i n g";
 
 			break;
 		default:
-			intentionLabel.text = "Accommodating";
+			intentionLabel.text = "A c c o m m o d a t i n g";
 
 			break;
 		}

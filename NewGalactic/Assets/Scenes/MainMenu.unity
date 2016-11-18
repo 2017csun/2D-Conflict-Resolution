@@ -442,6 +442,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolvedNumRound: -49582740
   unresolvedNumRound: -49582740
+  prosconsCorrectRound: 0
+  prosconsCorrectPartner: 0
 --- !u!4 &338922536
 Transform:
   m_ObjectHideFlags: 0

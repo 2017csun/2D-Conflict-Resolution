@@ -2,8 +2,18 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
+using UnityEngine.UI;
+
 
 public class LevelManager : Photon.PunBehaviour {
+
+	public Image fadePanel;
+
+	private float fadeSpeed = 1f;
+	private Color currentColor = new Color(0f,0f,0f,0f);
+	public bool shouldFadeToBlack = false;
+	string sceneNameVar;
+	private bool thisOneWasTrigger = false;
 
 	public void Start(){
 		//DontDestroyOnLoad (this.gameObject);
@@ -23,7 +33,7 @@ public class LevelManager : Photon.PunBehaviour {
 
 
 
-		PhotonPlayer[] players = PhotonNetwork.playerList;
+		/*PhotonPlayer[] players = PhotonNetwork.playerList;
 		foreach(PhotonPlayer p in players){
 			if (p.isLocal) {
 				Hashtable someCustomPropertiesToSet = new Hashtable () { { "isp1", "true" } };
@@ -32,7 +42,7 @@ public class LevelManager : Photon.PunBehaviour {
 				Hashtable someCustomPropertiesToSet = new Hashtable () { { "isp1", "false" } };
 				PhotonNetwork.player.SetCustomProperties (someCustomPropertiesToSet);
 			}
-		}
+		}*/
 		ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 		ApplyCharacterScript.isReadyToNextLevel = false;
 	}
@@ -54,6 +64,7 @@ public class LevelManager : Photon.PunBehaviour {
 	public void CheckForOtherPlayer(string sceneName){
 		if (ApplyCharacterScript.isReadyToNextLevel == false) {
 			ApplyCharacterScript.isReadyToNextLevel = true;
+			GameObject.FindObjectOfType<CameraManagerS> ().BlurCamera ();
 		}
 
 		if (ApplyCharacterScript.otherPlayerIsReadyToNextLevel) {
@@ -67,7 +78,18 @@ public class LevelManager : Photon.PunBehaviour {
 			ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 			ApplyCharacterScript.isReadyToNextLevel = false;
 
-			LoadScene (sceneName);
+			//LoadScene (sceneName);
+			if (fadePanel != null) {
+				PhotonView photonView = this.photonView;
+				photonView.RPC("FadeToBlack", PhotonTargets.All, sceneName);
+
+				thisOneWasTrigger = true;
+				//shouldFadeToBlack = true;
+				//fadePanel.gameObject.SetActive (true);
+				// sceneNameVar = sceneName;
+			} else {
+				LoadScene (sceneName);
+			}
 		} else if (VotingEnable.isMaster && SceneManager.GetActiveScene ().buildIndex == 10) {
 			NumberDetector[] dets = GameObject.FindObjectsOfType<NumberDetector> ();
 			if (dets != null) {
@@ -77,7 +99,38 @@ public class LevelManager : Photon.PunBehaviour {
 			}
 			ApplyCharacterScript.otherPlayerIsReadyToNextLevel = false;
 			ApplyCharacterScript.isReadyToNextLevel = false;
-			LoadScene (sceneName);
+			//LoadScene (sceneName);
+			if (fadePanel != null) {
+				PhotonView photonView = this.photonView;
+				photonView.RPC("FadeToBlack", PhotonTargets.All, sceneName);
+
+				thisOneWasTrigger = true;
+				//shouldFadeToBlack = true;
+				//fadePanel.gameObject.SetActive (true);
+				//sceneNameVar = sceneName;
+			} else {
+				LoadScene (sceneName);
+			}
+
+		}
+	}
+
+	[PunRPC]
+	public void FadeToBlack(string sceneNameStr){
+		shouldFadeToBlack = true;
+		fadePanel.gameObject.SetActive (true);
+		sceneNameVar = sceneNameStr;
+	}
+
+	void Update(){
+		if (fadePanel != null) {
+			if (shouldFadeToBlack && fadePanel.color.a < .95f) {
+				float alphaChange = Time.deltaTime / fadeSpeed;
+				currentColor.a += alphaChange;
+				fadePanel.color = currentColor;
+			} else if (shouldFadeToBlack && PhotonNetwork.player.isMasterClient) {
+				LoadScene (sceneNameVar);
+			}
 		}
 	}
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class DefaultRolePlayPrep : MonoBehaviour {
+public class DefaultRolePlayPrep : Photon.PunBehaviour {
 	public Text t;
 	// Use this for initialization
 	void Start () {

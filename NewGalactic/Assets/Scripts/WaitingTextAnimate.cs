@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class WaitingTextAnimate : MonoBehaviour {
+public class WaitingTextAnimate : Photon.PunBehaviour {
 
 	float animateTime = 0f;
 	string[] textString = { "Waiting for Other Player.", "Waiting for Other Player..", "Waiting for Other Player..." };

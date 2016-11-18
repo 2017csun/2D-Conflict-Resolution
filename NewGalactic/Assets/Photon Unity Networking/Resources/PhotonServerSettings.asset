@@ -39,4 +39,5 @@ MonoBehaviour:
   - RequestForPickupTimes
   - TaggedPlayer
   - LoadSceneRPC
+  - FadeToBlack
   DisableAutoOpenWizard: 1

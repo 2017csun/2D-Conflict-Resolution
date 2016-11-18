@@ -22,7 +22,7 @@ public class PopulateProsScript : MonoBehaviour {
 				"Asserting your position so ideas are taken seriously",
 				"Making quick decisions or achieving quick victory",
 				"Protecting your interests and views from attack",
-				"Seeking innovative solutions and creating synergy through the exchange of ideas",
+				"Seeking innovative solutions and creating synergy through exchanging ideas",
 				"Working toward meeting both people’s concern",
 				"Resolving problems in a relationship",
 				"Reducing stress by evading unpleasant people and topics",
@@ -35,7 +35,7 @@ public class PopulateProsScript : MonoBehaviour {
 			break;
 		case 1: // competing
 			return new string[] {
-				"Seeking innovative solutions and creating synergy through the exchange of ideas",
+				"Seeking innovative solutions and creating synergy through exchanging ideas",
 				"Working toward meeting both people’s concern",
 				"Resolving problems in a relationship",
 				"Getting to a situation that is good enough",
@@ -72,7 +72,7 @@ public class PopulateProsScript : MonoBehaviour {
 				"Asserting your position so ideas are taken seriously",
 				"Making quick decisions or achieving quick victory",
 				"Protecting your interests and views from attack",
-				"Seeking innovative solutions and creating synergy through the exchange of ideas",
+				"Seeking innovative solutions and creating synergy through exchanging ideas",
 				"Working toward meeting both people’s concern",
 				"Resolving problems in a relationship",
 				"Getting to a situation that is good enough",
@@ -93,7 +93,7 @@ public class PopulateProsScript : MonoBehaviour {
 				"Resolving problems in a relationship",
 				"Getting to a situation that is good enough",
 				"Providing equal gains and losses for both people",
-				"Seeking innovative solutions and creating synergy through the exchange of ideas",
+				"Seeking innovative solutions and creating synergy through exchanging ideas",
 				"Meeting half way to reduce relationship strain",
 				"Reducing stress by evading unpleasant people and topics",
 				"Gaining more time to be better prepared and be less distracted",
@@ -110,7 +110,7 @@ public class PopulateProsScript : MonoBehaviour {
 				"Resolving problems in a relationship",
 				"Getting to a situation that is good enough",
 				"Providing equal gains and losses for both people",
-				"Seeking innovative solutions and creating synergy through the exchange of ideas",
+				"Seeking innovative solutions and creating synergy through exchanging ideas",
 				"Meeting half way to reduce relationship strain",
 				"Reducing stress by evading unpleasant people and topics",
 				"Gaining more time to be better prepared and be less distracted",
@@ -158,7 +158,7 @@ public class PopulateProsScript : MonoBehaviour {
 			break;
 		case 2: //collaborating
 			return new string[] {
-				"Seeking innovative solutions and creating synergy through the exchange of ideas",
+				"Seeking innovative solutions and creating synergy through exchanging ideas",
 				"Working toward meeting both people’s concern",
 				"Resolving problems in a relationship",
 			};
