@@ -8,15 +8,15 @@ using System.Collections;
 
 class ProsAndConsHelper : Photon.PunBehaviour
 {
-    private static int proCount = 0;
-    private static int conCount = 0;
-    private static bool[] correctProIndeces;
-    private static bool[] correctConIndeces;
+    private int proCount = 0;
+    private int conCount = 0;
+    private bool[] correctProIndeces;
+    private bool[] correctConIndeces;
 
-	private static List<int> wrongIndexes = new List<int>();
+	private List<int> wrongIndexes = new List<int>();
 
 
-    static public void populateButtons(
+     public void populateButtons(
         GameObject gameObject,
         string[] correctAnswers,
         string[] wrongAnswers,
@@ -67,7 +67,7 @@ class ProsAndConsHelper : Photon.PunBehaviour
 
 		}
     }
-    static public bool[] generateIndeces()
+     public bool[] generateIndeces()
     {
         bool[] indeces = new bool[6];
         System.Random random = new System.Random();
@@ -118,7 +118,7 @@ class ProsAndConsHelper : Photon.PunBehaviour
         }
         return indeces;
     }
-    static void turnBlue(Text text, bool isPro)
+     void turnBlue(Text text, bool isPro)
     {
 		Transform parent = text.transform.parent;
 		Toggle tog = parent.GetComponentInChildren<Toggle> ();
@@ -157,7 +157,7 @@ class ProsAndConsHelper : Photon.PunBehaviour
             }
         }
     }
-	static private void showAnswerForList(GameObject list, bool[] indeces, bool isPro)
+	 private void showAnswerForList(GameObject list, bool[] indeces, bool isPro)
     {
 		int correct = 0;
 		int incorrect = 0;
@@ -188,7 +188,7 @@ class ProsAndConsHelper : Photon.PunBehaviour
 		}
 
     }
-    static public void ShowAnswers(GameObject list, bool isPro)
+     public void ShowAnswers(GameObject list, bool isPro)
     {
         
         if (isPro)

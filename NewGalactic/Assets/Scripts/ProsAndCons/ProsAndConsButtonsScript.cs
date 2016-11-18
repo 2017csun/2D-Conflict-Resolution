@@ -73,10 +73,10 @@ public class ProsAndConsButtonsScript : Photon.PunBehaviour {
         //button.GetComponentInChildren<Text>().text = "Press Enter to continue";
         
 		if (prosList != null) {
-			ProsAndConsHelper.ShowAnswers (prosList, true);
+			GameObject.FindObjectOfType<ProsAndConsHelper>().ShowAnswers (prosList, true);
 		} 
 		if (consList != null) {
-			ProsAndConsHelper.ShowAnswers (consList, false);
+			GameObject.FindObjectOfType<ProsAndConsHelper>().ShowAnswers (consList, false);
 		}
 		transporter.SetActive (true);
 

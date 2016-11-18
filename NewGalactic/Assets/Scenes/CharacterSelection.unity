@@ -951,6 +951,7 @@ MonoBehaviour:
   currentRound: 0
   currentConflict: 0
   currentIntention: 0
+  currentOtherPlayersIntention: 0
 --- !u!4 &1644436953
 Transform:
   m_ObjectHideFlags: 0
@@ -1381,7 +1382,7 @@ Prefab:
     - target: {fileID: 114000011890468394, guid: 8248c80e456b545dfbf37203495ef68f,
         type: 2}
       propertyPath: ObservedComponents.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000012025742124, guid: 8248c80e456b545dfbf37203495ef68f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1439,26 +1440,10 @@ Prefab:
         type: 2}
       propertyPath: ObservedComponents.Array.data[1]
       value: 
-      objectReference: {fileID: 2015334295}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8248c80e456b545dfbf37203495ef68f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2015334294 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013314553214, guid: 8248c80e456b545dfbf37203495ef68f,
-    type: 2}
-  m_PrefabInternal: {fileID: 2015334293}
---- !u!114 &2015334295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2015334294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9585272443e6cc04bb367f2ef3ac69a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2103321454
 Prefab:
   m_ObjectHideFlags: 0

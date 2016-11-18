@@ -14,6 +14,7 @@ public class LevelManager : Photon.PunBehaviour {
 	public bool shouldFadeToBlack = false;
 	string sceneNameVar;
 	private bool thisOneWasTrigger = false;
+	private bool breakFade = false;
 
 	public void Start(){
 		//DontDestroyOnLoad (this.gameObject);
@@ -123,12 +124,14 @@ public class LevelManager : Photon.PunBehaviour {
 	}
 
 	void Update(){
-		if (fadePanel != null) {
+		if (fadePanel != null && !breakFade) {
 			if (shouldFadeToBlack && fadePanel.color.a < .95f) {
 				float alphaChange = Time.deltaTime / fadeSpeed;
 				currentColor.a += alphaChange;
 				fadePanel.color = currentColor;
 			} else if (shouldFadeToBlack && PhotonNetwork.player.isMasterClient) {
+				//shouldFadeToBlack = false;
+				breakFade = true;
 				LoadScene (sceneNameVar);
 			}
 		}

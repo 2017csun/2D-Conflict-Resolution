@@ -10,7 +10,7 @@ public class PopulateProsScript : MonoBehaviour {
 
         string[] wrongAnswers = this.getWrongAnswers();
         string[] correctAnswers = this.getCorrectAnswers();
-        ProsAndConsHelper.populateButtons(gameObject, correctAnswers, wrongAnswers, true);
+		GameObject.FindObjectOfType<ProsAndConsHelper>().populateButtons(gameObject, correctAnswers, wrongAnswers, true);
         
     }
     // add logic for intentions here

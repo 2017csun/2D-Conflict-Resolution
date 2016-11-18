@@ -8,7 +8,7 @@ public class PopulateConsScript : MonoBehaviour {
     void Start () {
         string[] wrongAnswers = this.getWrongAnswers();
         string[] correctAnswers = this.getCorrectAnswers();
-        ProsAndConsHelper.populateButtons(gameObject, correctAnswers, wrongAnswers, false);
+		GameObject.FindObjectOfType<ProsAndConsHelper>().populateButtons(gameObject, correctAnswers, wrongAnswers, false);
 
     }
     private string[] getWrongAnswers()
