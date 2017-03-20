@@ -842,8 +842,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.375, y: 64}
-  m_SizeDelta: {x: 578, y: 159}
+  m_AnchoredPosition: {x: 1.375, y: 51.7}
+  m_SizeDelta: {x: 578, y: 183.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718453794
 MonoBehaviour:
@@ -1463,7 +1463,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 47f1a172544a0994087934248f14b919, type: 3}
-    m_FontSize: 24
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1474,7 +1474,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Use the time to think about how your character would respond to the situation.
+    Do not reveal your intention to the other person. Instead respond using the intention
+    traits. Click on the trait at the bottom to read more about the specific trait.
 --- !u!222 &1178482801
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1524,7 +1526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectDistance: {x: 1, y: 1}
   m_UseGraphicAlpha: 1
 --- !u!1 &1221669884 stripped
 GameObject:
@@ -1725,8 +1727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.6, y: 0.4}
-  m_SizeDelta: {x: 536.6, y: 137.6}
+  m_AnchoredPosition: {x: -9.6, y: 0.000024319}
+  m_SizeDelta: {x: 536.6, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336708374
 MonoBehaviour:
